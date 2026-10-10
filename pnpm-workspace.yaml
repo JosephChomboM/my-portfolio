@@ -1,5 +1,8 @@
 packages:
   - '.'
+# Pin Vite (read by pnpm 10 and 11 alike, unlike package.json#pnpm).
+overrides:
+  vite: 6.3.5
 supportedArchitectures:
   os:
     - linux
