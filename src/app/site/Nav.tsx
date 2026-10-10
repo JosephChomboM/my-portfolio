@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { KoiMark } from "./KoiMark";
-import { emailHref } from "../../content/profile";
+import { scrollToTarget } from "./hooks";
 
 const LINKS = [
   { id: "systems", label: "Systems" },
@@ -28,7 +28,18 @@ export function Nav({ theme, onToggleTheme }: { theme: "dark" | "light"; onToggl
         </a>
         <nav aria-label="Sections" className="nav__links">
           {LINKS.map((l) => (
-            <a key={l.id} href={`#${l.id}`}>
+            <a
+              key={l.id}
+              href={`#${l.id}`}
+              onClick={(e) => {
+                // on the home page we own the scroll: one fast animation instead of the native jump plus ours
+                const el = document.getElementById(l.id);
+                if (!el) return;
+                e.preventDefault();
+                history.pushState(null, "", `#${l.id}`);
+                scrollToTarget(el);
+              }}
+            >
               {l.label}
             </a>
           ))}
@@ -42,9 +53,6 @@ export function Nav({ theme, onToggleTheme }: { theme: "dark" | "light"; onToggl
           >
             {theme === "dark" ? <Sun size={16} strokeWidth={1.75} /> : <Moon size={16} strokeWidth={1.75} />}
           </button>
-          <a className="nav__email" href={emailHref || "#contact"}>
-            Email
-          </a>
         </div>
       </div>
     </header>

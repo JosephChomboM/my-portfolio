@@ -209,14 +209,14 @@ A school of line-art koi drifts along hairline currents across a near-black grou
 
 Density is editorial, not dashboard. Sections run on generous vertical rhythm, lists are ruled rows instead of cards, and depth comes from tonal layering and a faint film grain, never from shadow. Motion is slow. The koi school canvas is the page's one moment, and it acts out one illustrative ML behaviour: drift. "Inject drift" scatters the school, then the currents regroup it, while a quiet status line reads the school's drift value and its state (Stable, Drifting, Regrouping). Otherwise the koi only ease away from the cursor. Reduced motion renders a still frame.
 
-Below the hero the same line language runs through the page, so it reads as one piece: currents replace the straight section dividers, the delivery pipeline is drawn as a current that one vermilion koi travels as the section scrolls, each system carries a small line-art diagram drawn from its own architecture, and the contact section closes on the school at rest. These drawings explain; they do not decorate, and none of them adds an interaction.
+Below the hero the same line language runs through the page, so it reads as one piece: currents replace the straight section dividers, the delivery pipeline is drawn as a current that one vermilion koi travels as the section scrolls, each system carries a small line-art diagram drawn from its own architecture and topology, the career path is drawn as a river that one vermilion koi swims up into the present, and the contact section closes on the school at rest. "The short version" is the one section left without a drawing, a clean breath between the hero and Systems. These drawings explain; they do not decorate, and none of them adds an interaction.
 
 Confirmed rejections: the neon, chrome, and glitch "AI engineer" look, and the headline-over-card-grid template. The sans display alternative (Jost) was tried and rejected.
 
 **Key Characteristics:**
 - Dark first on deep water (#041214), with a solid, fully tokened light mode.
 - Hairline line work (1px rules, about 1.15px koi strokes) in aqua and seafoam; three-strand currents in place of straight section dividers.
-- One vermilion spark, reserved for the one odd koi wherever the school appears (hero, pipeline, contact), its trail, a few dots, and the mark's dot.
+- One vermilion spark, reserved for the one odd koi wherever the school appears (hero, pipeline, path, contact), its trail, a few dots, and the mark's dot.
 - Gilda Display for every headline, Archivo for reading and controls, Martian Mono only for the drift status line and the Inject drift button.
 - Square corners throughout; only dots and nodes are round.
 - Depth by tonal layering and film grain; no box shadows.
@@ -226,16 +226,16 @@ Confirmed rejections: the neon, chrome, and glitch "AI engineer" look, and the h
 A cool, near-monochrome sea of teal-tinted neutrals and pale aqua line color, with one warm accent held back almost entirely.
 
 ### Primary
-- **Ice** (`ice`): the interactive line color. Link underlines on hover, the CTA hover border and scan sweep, focus rings, the roles line under the name, practice-loop and architecture-diagram nodes (the last node filled), the active table-of-contents rule, stack items, the caret, the drift state word (Stable and Regrouping), and the hover border on the nav Email and Inject drift buttons. In light mode it deepens to **Deep Kelp** (`light-ice`).
+- **Ice** (`ice`): the interactive line color. Link underlines on hover, the CTA hover border and scan sweep, focus rings, the roles line under the name, practice-loop, architecture-diagram, and path-river nodes (the last diagram node and the river's Now node filled), the active table-of-contents rule, stack items, the caret, the drift state word (Stable and Regrouping), and the hover border on the nav Email and Inject drift buttons. In light mode it deepens to **Deep Kelp** (`light-ice`).
 - **Foam** (`foam`): the filled primary CTA ground (Email), with deep water as its text. In light mode the pairing inverts: the CTA fills with `light-text` and reads in `light-ground`.
 
 ### Secondary
-- **Current** (`current`): the wave currents on the canvas and every current drawn below the hero (section, principles, and footer rules; the pipeline; architecture diagrams; the contact school), always as strand bundles with a stronger center strand. Also the resting drift dot, selection tint (45% mix), and the primary CTA's hover sweep (30% mix).
+- **Current** (`current`): the wave currents on the canvas and every current drawn below the hero (section, principles, and footer rules; the pipeline; architecture diagrams and their tracing strand; the path river and its study strand; the contact school), always as strand bundles with a stronger center strand. Also the resting drift dot, selection tint (45% mix), and the primary CTA's hover sweep (30% mix).
 - **Koi Line** (`koi-line`): the stroke of every koi, on canvas and in the static koi glyphs below the hero, and the neutral scattered dots (the contact school's at 50%). The koi mark draws in the surrounding text color; the favicon's stroke is Koi Line exactly.
 - **Ambient Tint** (`ambient-tint`; `light-ambient-tint` in light mode): the only color stop in the hero's radial wash (`radial-gradient(90% 70% at 50% -10%, <tint>, transparent 65%)`). Never used as a fill elsewhere.
 
 ### Tertiary
-- **Vermilion** (`vermilion`; `light-vermilion` in light mode): the single warm voice. The hero's accent koi (1.5px stroke, an 8px soft bloom in `accent-glow` / `light-accent-glow`) and its fading light trail; the pipeline koi (1.5px, no bloom) and the stretch of current it has travelled (1.3px, 60%, round caps); the contact school's leader koi (1.5px, no bloom) and one accent dot beside it (80%); a few accent dots on the currents (about 6%), the koi mark's dot (read from `--accent`), the drift dot and state word while drifting, and the 1px leading scan line on the primary CTA's hover.
+- **Vermilion** (`vermilion`; `light-vermilion` in light mode): the single warm voice. The hero's accent koi (1.5px stroke, an 8px soft bloom in `accent-glow` / `light-accent-glow`) and its fading light trail; the pipeline koi (1.5px, no bloom) and the stretch of current it has travelled (1.3px, 60%, round caps); the path river's koi (26px, 1.5px, no bloom, swimming upward past Now, no trail); the contact school's leader koi (1.5px, no bloom) and one accent dot beside it (80%); a few accent dots on the currents (about 6%), the koi mark's dot (read from `--accent`), the drift dot and state word while drifting, and the 1px leading scan line on the primary CTA's hover.
 
 ### Neutral
 - **Deep Water** (`deep-water`): the page ground. Also the theme-color meta.
@@ -243,11 +243,11 @@ A cool, near-monochrome sea of teal-tinted neutrals and pale aqua line color, wi
 - **Panel** (`panel`): hover fill on system rows, the nav Email button, and the Inject drift button.
 - **Hairline** (`hairline`): every straight structural rule inside a section: row dividers, the top of the systems list, the nav's bottom border once scrolled, the drift row's top rule, case meta and TOC rails.
 - **Strong Hairline** (`hairline-strong`): control borders (CTAs, badges, the nav Email button, the Inject drift button, the theme toggle on hover), dashed pending underlines, and the scrollbar thumb.
-- **Text / Muted / Faint** (`text`, `text-muted`, `text-faint`): primary reading, secondary prose (intro, ledes, summaries, case body), and labels, metadata, and pending slots. Text also sets the drift value in the status line.
+- **Text / Muted / Faint** (`text`, `text-muted`, `text-faint`): primary reading, secondary prose (intro, ledes, summaries, case body), and labels, metadata, and pending slots. Text also sets the drift value in the status line. Faint Text is also the stroke of the path river's degree node, the one node not drawn in Ice.
 - **Light-mode neutrals** (`light-*`): a cool paper ground with the same roles, one for one. Light mode is a full theme, not an inversion filter.
 
 ### Named Rules
-**The One Spark Rule.** Vermilion marks the school's one odd koi wherever the school appears, and nothing else: at most one vermilion koi per section (the hero's accent koi, the pipeline koi, the contact school's leader), its trail (the hero's light trail, the pipeline's travelled stretch), a handful of dots, the koi mark's dot, the Drifting state word and its dot, and the primary CTA's hover scan line. A vermilion line only ever trails a koi. Never use it for text, headings, borders, fills, rules, nodes, or section accents. Its rarity is the point.
+**The One Spark Rule.** Vermilion marks the school's one odd koi wherever the school appears, and nothing else: at most one vermilion koi per section (the hero's accent koi, the pipeline koi, the path river's koi, the contact school's leader), its trail (the hero's light trail, the pipeline's travelled stretch), a handful of dots, the koi mark's dot, the Drifting state word and its dot, and the primary CTA's hover scan line. A vermilion line only ever trails a koi. Never use it for text, headings, borders, fills, rules, nodes, or section accents, and never in a system diagram. Its rarity is the point.
 
 **The Cool Sea Rule.** All neutrals carry the teal undertone. Do not introduce warm greys, pure black, or pure white grounds in dark mode.
 
@@ -286,17 +286,22 @@ A cool, near-monochrome sea of teal-tinted neutrals and pale aqua line color, wi
 
 ## Layout
 
-A single centered container (max 1360px) with a fluid gutter of clamp(20px, 4.4vw, 64px). A fixed 64px nav sits above everything. It is transparent at the top of the page and takes a 94% ground-mix tint with a hairline bottom border only after the page scrolls past 8px; there is no backdrop blur. Anchor scrolling offsets by the nav height plus 16px.
+A single centered container (max 1360px) with a fluid gutter of clamp(20px, 4.4vw, 64px). A fixed 64px nav sits above everything. It is transparent at the top of the page and turns solid ground with a hairline bottom border only after the page scrolls past 8px, so nothing from the section above shows through; there is no backdrop blur. Section anchors sit on the headings, and every anchor lands at the nav height plus 24px (`scroll-margin-top`, matched by the site's own short ease-out scroll of at most 600ms, instant under reduced motion).
 
 The hero fills the small viewport height and is padded by the nav height. The koi school canvas covers the whole hero (inset 0), including the band behind the transparent nav. The school occupies the upper band, and the text block sits low: the name, roles, and a two-column body (intro beside the CTA cluster), closed by one hairline-topped drift row. Each section opens with its top padding (`spacing.section`), then a current rule across the container, then `spacing.rule-gap` before the section head. Section heads are an asymmetric 5:6 grid with the headline and lede bottom-aligned. Content uses asymmetric 4:8 grids with a 64px column gap.
 
 Lists are ruled rows, not cards: facts, systems, and career entries are grids divided by 1px hairlines with 18 to 30px vertical padding. System rows lead with a 200px diagram column (four columns: diagram, main, meta, arrow); under 820px the diagram stacks above the title at up to 220px. The practice loop is a six-column row of stages threaded by the pipeline current, with the retrain caption under the third column; under 820px it becomes a vertical rail with the current running down the nodes. The principles sit under their own current rule (clamp(72px, 9vw, 120px) above it, 32px below). The footer opens with a current rule and 24px below it. The contact section ends flush with the contact school (clamp(140px, 15vw, 200px) tall, clamp(48px, 7vw, 88px) above it, clipped at the sides). The case study pairs a 240px sticky table of contents with a 72ch reading column.
 
-Breakpoints: 1080px (principles and stack reflow, 4:8 grids stack), 820px (nav links hide, hero and section heads go single column, loop goes vertical, case TOC hides), 560px (body to 16px, hero CTAs pair two per row).
+Path is a 4:8 grid like the others: the headline on the left, the ruled career list on the right, with the path river drawn beside the list. On desktop the river sits in the 64px grid gap, about 30px left of the list, and the study strand about 22px further left. Under 1080px, where the grid stacks, the list takes 46px of left padding so the river keeps its place beside the rows.
+
+Breakpoints: 1080px (principles and stack reflow, 4:8 grids stack, the path list makes room for the river), 820px (nav links hide, hero and section heads go single column, loop goes vertical, case TOC hides), 560px (body to 16px, hero CTAs pair two per row).
+
+### Named Rules
+**The Clean Breath Rule.** "The short version" carries no line art beyond its opening current rule. It is the recruiter's scanning section, facts and stack in ruled rows, and stays a clean breath between the hero and Systems. Do not add a diagram, koi, or current inside it.
 
 ## Elevation & Depth
 
-The system is flat. There are no box shadows. Depth comes from four things: tonal layering (ground, raised water, panel), a radial ambient wash at the top of the hero in `ambient-tint`, the scrolled nav's flat tint (94% ground mix, no blur), and a fixed fractal-noise film grain over the whole page at 5% opacity in dark mode and 3% in light, blended with overlay. No surface uses a backdrop blur; the hero accent koi's 8px bloom is the only glow.
+The system is flat. There are no box shadows. Depth comes from four things: tonal layering (ground, raised water, panel), a radial ambient wash at the top of the hero in `ambient-tint`, the scrolled nav's solid ground (no blur), and a fixed fractal-noise film grain over the whole page at 5% opacity in dark mode and 3% in light, blended with overlay. No surface uses a backdrop blur; the hero accent koi's 8px bloom is the only glow.
 
 ### Named Rules
 **The No-Shadow Rule.** Surfaces never cast shadows. A hover state shifts tone (panel fill) or line color (ice border), never elevation.
@@ -305,9 +310,9 @@ The system is flat. There are no box shadows. Depth comes from four things: tona
 
 ## Shapes
 
-Square corners everywhere: buttons (including the nav Email and Inject drift buttons), badges, panels, decision boxes, and the icon button all use 0 radius. Two utility radii exist and go nowhere else: the focus ring softens by 1px (`rounded.focus`), and the scrollbar thumb is a 10px pill (`rounded.scrollbar`) inset by a 3px ground border. Round shapes are reserved for points: the drift dot (6px), the roles separators (4px), loop nodes (13px open circles, with the evaluation gate drawn as a filled diamond), and architecture-diagram nodes (small open circles, the last slightly larger and filled). Borders are 1px hairlines. Dashed hairlines carry one meaning: pending or placeholder content. Return and feedback paths are drawn as currents (the pipeline's retrain loop), not dashes.
+Square corners everywhere: buttons (including the nav Email and Inject drift buttons), badges, panels, decision boxes, and the icon button all use 0 radius. Two utility radii exist and go nowhere else: the focus ring softens by 1px (`rounded.focus`), and the scrollbar thumb is a 10px pill (`rounded.scrollbar`) inset by a 3px ground border. Round shapes are reserved for points: the drift dot (6px), the roles separators (4px), loop nodes (13px open circles, with the evaluation gate drawn as a filled diamond), architecture-diagram nodes (small open circles, the last slightly larger and filled; review gates drawn as open 8px diamonds), and path-river nodes (open circles about 7px across, the Now node slightly larger and filled Ice). Borders are 1px hairlines. Dashed hairlines carry one meaning: pending or placeholder content. Return and feedback paths are drawn as currents (the pipeline's retrain loop), not dashes.
 
-Currents are the system's curve: three near-parallel strands about 2.5 units apart, the center strand roughly twice as strong as the outer two (outer about 22%, center about 42 to 50%), 1px non-scaling strokes, no fills. A swirl is a current winding inward 1.25 turns.
+Currents are the system's curve: three near-parallel strands about 2.5 units apart, the center strand roughly twice as strong as the outer two (outer about 22%, center about 42 to 50%), 1px non-scaling strokes, no fills. A swirl is a current winding inward 1.25 turns. One finer variant exists: the path river's study strand is two strands about 2.8 units apart at about 30%, read as a tributary rather than a current. A diagram's tracing strand is a single strand (about 35%) with fainter vertical taps (about 18%).
 
 The koi mark is a five-stroke line drawing at stroke width 7 on a 100 grid with round caps, plus one vermilion dot. The same five strokes, without the dot, are the koi glyph drawn in the sections below the hero (21 to 30px long, a 1.15px non-scaling stroke in Koi Line, 1.5px in Vermilion for the odd koi). The favicon puts it on a deep-water tile with a 22 radius, the one rounded container in the system.
 
@@ -332,22 +337,30 @@ Quiet, square, and instrument-like. Each CTA has a label and a 16px line icon wh
 - **Style:** 600, 11px, 0.1em uppercase Archivo, muted text, 1px strong-hairline border, 6px 8px padding, square. Used for "Draft" on system rows.
 
 ### Navigation
-- **Style:** fixed, 64px. Transparent with a transparent border at the top of the page; past 8px of scroll (the scrolled state) it takes a 94% ground-mix tint and a hairline bottom border, eased over 0.3s. No backdrop blur.
+- **Style:** fixed, 64px. Transparent with a transparent border at the top of the page; past 8px of scroll (the scrolled state) it turns solid ground with a hairline bottom border, eased over 0.3s. No backdrop blur. Nav links scroll to their section heading in at most 600ms.
 - **Brand:** the koi mark (22px) beside "JC" in Archivo 600, 13px, 0.14em tracking.
 - **Links:** Systems, Practice, Path, Contact in 14px muted text; on hover the text brightens and a 1px Ice underline draws in from the left over 0.35s.
 - **End:** a 36px square theme toggle (border appears on hover), then an "Email" text button: Archivo 600, 14px, 8px 14px padding, square, 1px strong-hairline border; on hover the border turns Ice and the panel fill comes in. It links to the email address, or to the contact section while the address is pending.
 - **Mobile:** section links hide under 820px; the toggle and Email remain, pushed to the right.
 
 ### System Rows
-Ruled rows instead of cards. Each row opens with a small architecture diagram on a square Raised Water tile, then a serif title and muted summary, the stack and an optional Draft badge on the right, and an arrow. On hover the row takes the panel fill, indents 20px, the title turns Ice, the arrow moves right 4px, and the diagram tile drops to Deep Water.
+Ruled rows instead of cards. Each row opens with a small architecture diagram on a square Raised Water tile, then a serif title and muted summary, the stack and an optional Draft badge on the right, and an arrow. On hover the row takes the panel fill, indents 20px, the title turns Ice, the arrow moves right 4px, and the diagram tile drops to Deep Water. System rows carry no Vermilion.
 
 ### Architecture Diagram
-A small line-art sketch drawn from a case study's own architecture stages, so every system shows its real shape in one style. The stages sit as nodes on one three-strand current that bows gently between them (alternating slightly above and below the line); nodes are open Ice circles filled with Raised Water, and the last node is slightly larger and filled Ice. The current enters from the left with a short lead-in. It draws at 200px wide in the system row and up to 560px in the case-study architecture figure, above the step labels. It is never decorative: no diagram without stages behind it.
+A small line-art sketch drawn from a case study's own architecture stages and its optional topology, so every system shows its real shape in one style. The stages sit as nodes on one three-strand current that bows gently between them (alternating slightly above and below the line); nodes are open Ice circles filled with Raised Water, and the last node is slightly larger and filled Ice. The current enters from the left with a short lead-in. The topology changes the shape, never the style:
+- **Gate:** a review or acceptance step is an open Ice diamond (8px, Raised Water fill) in place of its circle. When the gate is the last node on the flow it stays an open diamond.
+- **Sidecar:** a tracing or logging stage leaves the main flow and runs as a single fainter strand under the whole diagram, with a vertical tap down from each node and its own small open end node.
+- **Join:** the stages before the join run on an upper offline lane of open nodes and merge into the main flow at its first node; the main lane starts later to leave room.
+- **Split:** the last stage fans out into two outputs, each a filled Ice end node.
+It draws at 200px wide in the system row and up to 560px in the case-study architecture figure, above the step labels; both use the same topology. It carries no Vermilion. It is never decorative: no diagram without stages behind it.
 
 ### Practice Loop (Pipeline Current)
 "How I ship models" as a current. Six stages (open Ice circles on the ground, the evaluation gate a filled Ice diamond, the final stage filled) are threaded by a three-strand current measured through the node centres, bowing between them, with a short lead-in before the first stage. After Monitor the current runs into a swirl in the hero's style; on wide screens a strand runs back from the swirl under the stages and rises into Train as the retrain loop, with the Ice caption above it (no icon). On narrow screens the current runs down the stages into a small swirl beside the retrain caption.
 - **Koi:** one vermilion koi (30px wide, 24px narrow) travels Ingest to Monitor, tied to scroll position: it starts as the loop's top reaches 82% of the viewport and arrives over the next 62% of the viewport height, eased toward its target each frame. The stretch it has travelled warms in Vermilion (1.3px, 60%). Scroll-linked, not an interaction; nothing to click or hover.
 - **Reduced motion:** the koi rests at Monitor with the whole stretch warmed.
+
+### Path River
+Path drawn as a river: the jobs are nodes on one static three-strand current running down beside the list, newest at the top, each node level with its row's date. The current bows between nodes (alternating sides), fades in about 70px above "Now" and fades out about 34px below the oldest job (a vertical Current gradient). Nodes are open Ice circles on the ground; "Now" is slightly larger and filled Ice. Study runs as the finer two-strand tributary to the left: it starts at the degree node (open, Faint Text stroke), rises beside the jobs, and joins the river just below "Now", showing he studied while working. One vermilion koi (26px) swims upward past "Now" into the present; it is the section's only accent and has no trail. Positions are measured from the list, so the river re-fits on resize and once fonts load. Nothing moves and nothing is interactive.
 
 ### Current Rule
 A thin static divider, 24px tall and full container width: three strands of Current (outer 22%, center 42%), 1px non-scaling, each instance seeded to a different phase and wavelength. Used at the top of every section, above the principles, and at the top of the footer, in place of a straight hairline.
@@ -383,15 +396,16 @@ One quiet, hairline-topped row closing the hero (10px 22px gaps, 16px top paddin
 - **Do** keep corners square; reserve round shapes for dots and nodes.
 - **Do** render missing links and names as marked pending slots (dashed, faint, `aria-disabled`), never as fake values.
 - **Do** keep motion slow (ease `cubic-bezier(0.16, 1, 0.3, 1)`, 0.2 to 0.5s for states) and honor reduced motion with a still frame, reporting drift states in the status line only, resting the pipeline koi at Monitor, and stilling the contact school.
-- **Do** draw diagrams below the hero from real data (stages, architecture) in the hero's line language: strand-bundled currents, open Ice nodes, the last node filled.
-- **Do** let the koi canvas fill the whole hero, behind the nav; keep the nav transparent at the top and tint it (94% ground mix, hairline border) only once scrolled.
+- **Do** draw diagrams below the hero from real data (stages, topology, career dates) in the hero's line language: strand-bundled currents, open Ice nodes, the last or present node filled, gates as diamonds.
+- **Do** let the koi canvas fill the whole hero, behind the nav; keep the nav transparent at the top and make it solid ground (hairline border) only once scrolled.
 - **Do** keep the hero's bottom row to the drift status line, the one Inject drift button, and the illustrative note.
 
 ### Don't:
 - **Don't** use Vermilion for text, headings, borders, fills, rules, nodes, or section accents. It belongs to the one odd koi per section, its trail, a few dots, the mark's dot, and the drifting state.
 - **Don't** use Martian Mono anywhere outside the drift status line and the Inject drift button.
-- **Don't** add koi behaviours beyond the hero's drift and cursor easing, the pipeline koi's scroll-linked travel, and the contact school's slow rest bob. Nothing below the hero is interactive.
+- **Don't** add koi behaviours beyond the hero's drift and cursor easing, the pipeline koi's scroll-linked travel, and the contact school's slow rest bob. The path river and its koi are static. Nothing below the hero is interactive.
 - **Don't** add box shadows, glows on text or buttons, neon, chrome, or glitch effects.
 - **Don't** set a sans-serif display face or bold the serif.
+- **Don't** add line art to "The short version"; it stays a clean breath for scanning.
 - **Don't** lay content out as a headline over a grid of cards.
 - **Don't** use dashed lines decoratively or for return paths; dashes mean pending.

@@ -1,6 +1,14 @@
 // Joseph's real projects. Facts come from his CVs; anything in [brackets] is still his to write.
 // Bracketed text renders as a visible placeholder, so nothing unwritten passes as fact.
 
+/**
+ * The shape of a system, so each diagram shows its own architecture:
+ * gate = a review/acceptance step (drawn as a diamond); sidecar = a stage that runs alongside the whole flow
+ * (tracing, logging); joinAt = stages before it arrive on a second lane (an offline path) and merge there;
+ * split = the last stage fans out into two outputs.
+ */
+export type Topology = { gate?: number; sidecar?: number; joinAt?: number; split?: boolean };
+
 export type CaseStudy = {
   slug: string;
   status: "draft" | "published";
@@ -14,8 +22,8 @@ export type CaseStudy = {
   sections: {
     problem: string;
     constraints: string[];
-    // stages also draw the small line-art diagram on this system's row and case-study page
-    architecture: { caption: string; stages: string[] };
+    // stages (and topology) draw the line-art diagram on this system's row and case-study page
+    architecture: { caption: string; stages: string[]; topology?: Topology };
     decisions: { choice: string; over: string; because: string }[];
     evaluation: { evaluated: string; monitored: string };
     hindsight: string;
@@ -46,6 +54,7 @@ export const caseStudies: CaseStudy[] = [
       architecture: {
         caption: "Validation outputs from Databricks feed LLM generation in Azure AI Foundry; reports are reviewed in a Streamlit app, with every run, its tokens and its cost tracked.",
         stages: ["Validation data (Databricks)", "Prompting and generation (Azure OpenAI)", "Conclusions and reports", "Streamlit review app", "Run, token and cost tracking"],
+        topology: { gate: 3, sidecar: 4 },
       },
       decisions: TODO_DECISIONS,
       evaluation: {
@@ -71,6 +80,7 @@ export const caseStudies: CaseStudy[] = [
       architecture: {
         caption: "Documents are ingested and embedded, retrieved by vector search, and answered by an LLM behind a FastAPI backend.",
         stages: ["Corpus ingestion", "Embeddings", "Vector search", "LLM answer", "FastAPI service"],
+        topology: { joinAt: 2 },
       },
       decisions: TODO_DECISIONS,
       evaluation: {
@@ -95,6 +105,7 @@ export const caseStudies: CaseStudy[] = [
       architecture: {
         caption: "Data preparation and feature engineering feed tracked training runs; the selected model is versioned in MLflow and served in batch and through a FastAPI API.",
         stages: ["Data preparation", "Feature engineering", "Training and comparison", "MLflow registry", "Batch and API serving"],
+        topology: { split: true },
       },
       decisions: TODO_DECISIONS,
       evaluation: {
@@ -119,6 +130,7 @@ export const caseStudies: CaseStudy[] = [
       architecture: {
         caption: "Requests enter a FastAPI backend that manages workflow state and auditing, retrieve context from pgvector, are classified by an LLM with business rules, and go to human review.",
         stages: ["Request intake (FastAPI)", "Context retrieval (pgvector)", "LLM and business rules", "Human review", "Audit and Langfuse tracing"],
+        topology: { gate: 3, sidecar: 4 },
       },
       decisions: TODO_DECISIONS,
       evaluation: {

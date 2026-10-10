@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { caseStudies } from "../../content/caseStudies";
 import { MiniFlow } from "./Lines";
+import { scrollToTarget } from "./hooks";
 
 /** Renders [bracketed] text as a visible placeholder so unwritten parts never pass as fact. */
 function T({ children }: { children: string }) {
@@ -31,7 +32,7 @@ export function CaseStudy({ slug }: { slug: string }) {
     // #/systems/<slug>/<section> lands on that section; a bare case link starts at the top
     const section = window.location.hash.split("/")[3];
     const target = section ? document.getElementById(section) : null;
-    if (target) target.scrollIntoView({ block: "start", behavior: "instant" as ScrollBehavior });
+    if (target) scrollToTarget(target, true);
     else window.scrollTo(0, 0);
     const els = TOC.map((t) => document.getElementById(t.id)).filter(Boolean) as HTMLElement[];
     const io = new IntersectionObserver(
@@ -82,7 +83,7 @@ export function CaseStudy({ slug }: { slug: string }) {
                     onClick={(e) => {
                       e.preventDefault();
                       history.replaceState(null, "", `#/systems/${c.slug}/${t.id}`);
-                      document.getElementById(t.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      const el = document.getElementById(t.id); if (el) scrollToTarget(el);
                     }}>
                     {t.label}
                   </a>
@@ -96,7 +97,7 @@ export function CaseStudy({ slug }: { slug: string }) {
             <section id="architecture">
               <h2>Architecture</h2>
               <figure className="arch">
-                <MiniFlow stages={s.architecture.stages} className="miniflow--case" />
+                <MiniFlow stages={s.architecture.stages} topology={s.architecture.topology} className="miniflow--case" />
                 <ol className="arch__flow">
                   {s.architecture.stages.map((st, i) => <li key={i}><T>{st}</T></li>)}
                 </ol>

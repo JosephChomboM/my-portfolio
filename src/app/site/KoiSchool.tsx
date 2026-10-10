@@ -93,16 +93,25 @@ export function KoiSchool({ scatterKey, onStatus }: { scatterKey: number; onStat
 
     const build = () => {
       const narrow = w < 720;
-      top = h * (narrow ? 0.09 : 0.1);
-      bh = h * (narrow ? 0.34 : 0.42);
+      // the band fills the height the hero leaves above the name and then runs on into it: the lowest
+      // currents and koi run through the letters, the same blend at every screen height
+      const navH = document.querySelector<HTMLElement>(".nav")?.offsetHeight ?? 64;
+      const title = c.parentElement?.querySelector<HTMLElement>(".hero__title");
+      const limit = title ? title.getBoundingClientRect().top - c.getBoundingClientRect().top : h * 0.55;
+      const blend = title ? Math.max(48, parseFloat(getComputedStyle(title).fontSize) * 0.85) : 0;
+      top = navH + (narrow ? 14 : 20);
+      // lanes reach ~1.18 band-heights below the band top once waves and the vortex bow are included
+      bh = Math.max(70, (limit - top + blend) / 1.18);
       lambda = Math.max(w * 0.78, 520);
       amp = bh * 0.12;
       cx = w * (narrow ? 0.72 : 0.68);
       cy = top + bh * 0.5;
       R = bh * 0.3;
-      const scale = Math.min(1.15, Math.max(0.7, w / 1440));
-      const laneCount = narrow ? 13 : 24;
-      const orbitCount = narrow ? 4 : 8;
+      // a shallow band (short screens) carries a smaller, thinner school so it never crowds into a strip
+      const depth = Math.min(1, Math.max(0.45, bh / 300));
+      const scale = Math.min(1.15, Math.max(0.6, w / 1440)) * Math.min(1, 0.55 + depth * 0.45);
+      const laneCount = Math.round((narrow ? 13 : 24) * depth);
+      const orbitCount = Math.max(3, Math.round((narrow ? 4 : 8) * depth));
       koi = [];
       // shoals: koi travel in loose groups that share a lane band and a pace
       const shoals = Array.from({ length: narrow ? 3 : 5 }, (_, j) => ({
@@ -138,8 +147,16 @@ export function KoiSchool({ scatterKey, onStatus }: { scatterKey: number; onStat
           px: 0, py: 0,
         });
       }
+      // the one vermilion koi swims its own line: an upper-middle lane clear of the name, in view from the
+      // first frame, at its own unhurried pace so it reads as the odd one out instead of vanishing in a shoal
       const k = koi[3];
-      if (k) { k.size = 34 * scale; }
+      if (k) {
+        k.size = 34 * scale;
+        k.lane = 2;
+        k.offset = 0;
+        k.x = w * (narrow ? 0.28 : 0.34);
+        k.speed = 16 * Math.sqrt(scale);
+      }
       dots = [];
       const dotCount = narrow ? 44 : 90;
       for (let i = 0; i < dotCount; i++) {
@@ -218,7 +235,7 @@ export function KoiSchool({ scatterKey, onStatus }: { scatterKey: number; onStat
       const accent = koi[3];
       if (accent) {
         trail.push({ x: accent.px, y: accent.py });
-        if (trail.length > 70) trail.shift();
+        if (trail.length > 120) trail.shift();
         if (trail.length > 1 && Math.abs(trail[trail.length - 1].x - trail[trail.length - 2].x) > 100) trail = [];
       }
       const drift = Math.min(0.6, total / koi.length / (bh * 0.55));
@@ -303,7 +320,7 @@ export function KoiSchool({ scatterKey, onStatus }: { scatterKey: number; onStat
         ctx.strokeStyle = colors.accent;
         ctx.lineWidth = 1;
         for (let i = 1; i < trail.length; i++) {
-          ctx.globalAlpha = (i / trail.length) * 0.4;
+          ctx.globalAlpha = (i / trail.length) * 0.55;
           ctx.beginPath();
           ctx.moveTo(trail[i - 1].x, trail[i - 1].y);
           ctx.lineTo(trail[i].x, trail[i].y);
@@ -338,6 +355,10 @@ export function KoiSchool({ scatterKey, onStatus }: { scatterKey: number; onStat
     mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     const ro = new ResizeObserver(resize);
     ro.observe(c);
+    // the name can move without the canvas resizing (fonts swapping in, copy wrapping)
+    const inner = c.parentElement?.querySelector<HTMLElement>(".hero__inner");
+    if (inner) ro.observe(inner);
+    document.fonts?.ready.then(resize);
     const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
     io.observe(c);
 

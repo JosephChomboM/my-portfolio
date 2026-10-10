@@ -1,3 +1,5 @@
+import type { Topology } from "../../content/caseStudies";
+
 // The hero's line language, drawn statically for the sections below:
 // strand-bundled currents, the koi glyph from Joseph's mark, and the swirl.
 
@@ -38,26 +40,65 @@ export function CurrentRule({ seed = 0, className = "" }: { seed?: number; class
 }
 
 /**
- * A small line-art architecture sketch: the case study's stages as nodes on one current.
- * Drawn from data, so every system row holds a diagram in the same style.
+ * A small line-art architecture sketch drawn from a case study's stages and topology, so every system shows its
+ * own shape: review gates as diamonds, an offline lane that merges in, outputs that fan out, and a tracing strand
+ * that runs under the whole flow.
  */
-export function MiniFlow({ stages, className = "" }: { stages: readonly string[]; className?: string }) {
-  const W = 240, H = 80, pad = 18;
-  const n = Math.max(2, stages.length);
-  const pts = Array.from({ length: n }, (_, i) => ({ x: pad + (i * (W - pad * 2)) / (n - 1), y: H / 2 + (i % 2 ? -9 : 9) }));
-  const seg = (o: number) =>
-    pts.reduce((d, p, i) => {
-      if (i === 0) return `M${p.x - 14} ${p.y + o - 6} Q${p.x - 6} ${p.y + o} ${p.x} ${p.y + o}`;
-      const a = pts[i - 1], dx = (p.x - a.x) / 2;
-      return `${d} C${a.x + dx} ${a.y + o} ${p.x - dx} ${p.y + o} ${p.x} ${p.y + o}`;
+export function MiniFlow({ stages, topology = {}, className = "" }: { stages: readonly string[]; topology?: Topology; className?: string }) {
+  const W = 240, H = 84, pad = 16, mid = 38;
+  const { gate, sidecar, joinAt, split } = topology;
+  const main = stages.map((_, i) => i).filter((i) => i !== sidecar);
+  const lanes = main.filter((i) => joinAt === undefined || i >= joinAt);
+  const offline = joinAt === undefined ? [] : main.filter((i) => i < joinAt);
+  const right = split ? W - pad - 34 : W - pad;
+  // the merging lane starts later so its last node sits clear of the join
+  const left = offline.length ? pad + 70 : pad;
+  const xs = (n: number, from: number, to: number) => Array.from({ length: n }, (_, k) => (n === 1 ? from : from + (k * (to - from)) / (n - 1)));
+  const laneX = xs(lanes.length, left, right);
+  const pts = lanes.map((i, k) => ({ i, x: laneX[k], y: mid + (k % 2 ? -5 : 5) }));
+  const offX = xs(offline.length, pad, left - 30);
+  const offPts = offline.map((i, k) => ({ i, x: offX[k], y: 14 + (k % 2 ? 3 : 0) }));
+  const curve = (p: { x: number; y: number }[], o: number) =>
+    p.reduce((d, q, k) => {
+      if (k === 0) return `M${q.x} ${q.y + o}`;
+      const a = p[k - 1], dx = (q.x - a.x) / 2;
+      return `${d} C${a.x + dx} ${a.y + o} ${q.x - dx} ${q.y + o} ${q.x} ${q.y + o}`;
     }, "");
+  const lead = (o: number) => `M${pts[0].x - 14} ${pts[0].y + o - 4} Q${pts[0].x - 6} ${pts[0].y + o} ${pts[0].x} ${pts[0].y + o}`;
+  const last = pts[pts.length - 1];
+  const leaves = split ? [{ x: W - pad, y: 18 }, { x: W - pad, y: 58 }] : [];
+  const traceY = 72;
+  const node = (x: number, y: number, i: number, end = false) =>
+    i === gate ? (
+      <rect key={`n${i}`} x={x - 4} y={y - 4} width={8} height={8} transform={`rotate(45 ${x} ${y})`} className="miniflow__node is-gate" />
+    ) : (
+      <circle key={`n${i}`} cx={x} cy={y} r={end ? 3.6 : 3} className={end ? "miniflow__node is-end" : "miniflow__node"} />
+    );
   return (
     <svg className={`miniflow ${className}`} viewBox={`0 0 ${W} ${H}`} aria-hidden="true">
-      {[-2.4, 0, 2.4].map((o, i) => (
-        <path key={o} d={seg(o)} className={`miniflow__strand s${i}`} />
+      {[-2.4, 0, 2.4].map((o, k) => (
+        <g key={o} className={`miniflow__strand s${k}`}>
+          <path d={lead(o)} />
+          <path d={curve(pts, o)} />
+          {offPts.length > 0 && <path d={`${curve(offPts, o)} C${offPts[offPts.length - 1].x + 14} ${offPts[offPts.length - 1].y + o} ${pts[0].x - 16} ${pts[0].y + o - 14} ${pts[0].x} ${pts[0].y + o}`} />}
+          {leaves.map((l) => (
+            <path key={l.y} d={`M${last.x} ${last.y + o} C${last.x + 16} ${last.y + o} ${l.x - 18} ${l.y + o} ${l.x} ${l.y + o}`} />
+          ))}
+        </g>
       ))}
-      {pts.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r={i === n - 1 ? 3.6 : 3} className={i === n - 1 ? "miniflow__node is-end" : "miniflow__node"} />
+      {sidecar !== undefined && (
+        <g className="miniflow__trace">
+          <path d={`M${pts[0].x} ${traceY} L${last.x} ${traceY}`} />
+          {pts.map((p) => (
+            <path key={p.i} d={`M${p.x} ${p.y + 5} L${p.x} ${traceY}`} className="miniflow__tap" />
+          ))}
+          <circle cx={last.x + 12} cy={traceY} r={2.6} className="miniflow__node" />
+        </g>
+      )}
+      {offPts.map((p) => node(p.x, p.y, p.i))}
+      {pts.map((p, k) => node(p.x, p.y, p.i, !split && k === pts.length - 1))}
+      {leaves.map((l, k) => (
+        <circle key={`l${k}`} cx={l.x} cy={l.y} r={3.4} className="miniflow__node is-end" />
       ))}
     </svg>
   );

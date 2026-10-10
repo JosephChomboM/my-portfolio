@@ -3,6 +3,7 @@ import { CopyCta, Cta } from "./Cta";
 import { KoiMark } from "./KoiMark";
 import { ContactSchool, CurrentRule, MiniFlow } from "./Lines";
 import { PipelineCurrent } from "./PipelineCurrent";
+import { PathRiver } from "./PathRiver";
 import { caseStudies } from "../../content/caseStudies";
 import { cvHref, emailHref, profile } from "../../content/profile";
 
@@ -54,13 +55,13 @@ export function Glance() {
 
 export function Systems() {
   return (
-    <section className="section" id="systems" aria-labelledby="systems-title">
+    <section className="section" aria-labelledby="systems">
       <div className="wrap">
         <CurrentRule seed={2} className="section__rule" />
       </div>
       <div className="wrap">
         <div className="section__head">
-          <h2 id="systems-title" className="h2">
+          <h2 id="systems" className="h2">
             Systems
           </h2>
           <p className="lede">
@@ -74,7 +75,7 @@ export function Systems() {
               <li key={c.slug}>
                 <a className="system" href={`#/systems/${c.slug}`}>
                   <span className="system__diagram">
-                    <MiniFlow stages={c.sections.architecture.stages} />
+                    <MiniFlow stages={c.sections.architecture.stages} topology={c.sections.architecture.topology} />
                   </span>
                   <span className="system__main">
                     <span className="system__title">{c.title}</span>
@@ -114,13 +115,13 @@ const PRINCIPLES = [
 
 export function Practice() {
   return (
-    <section className="section practice" id="practice" aria-labelledby="practice-title">
+    <section className="section practice" aria-labelledby="practice">
       <div className="wrap">
         <CurrentRule seed={3} className="section__rule" />
       </div>
       <div className="wrap">
         <div className="section__head">
-          <h2 id="practice-title" className="h2">
+          <h2 id="practice" className="h2">
             How I ship models.
           </h2>
           <p className="lede">The loop I build around every model, from raw data to a monitored service that retrains itself when the world moves.</p>
@@ -165,15 +166,17 @@ export function Path() {
     },
   ];
   return (
-    <section className="section" id="path" aria-labelledby="path-title">
+    <section className="section" aria-labelledby="path">
       <div className="wrap">
         <CurrentRule seed={4} className="section__rule" />
       </div>
       <div className="wrap path">
-        <h2 id="path-title" className="h2">
+        <h2 id="path" className="h2">
           Path.
         </h2>
-        <ol className="path__list">
+        <div className="path__flow">
+          <PathRiver />
+          <ol className="path__list">
           {steps.map((s) => (
             <li key={s.when}>
               <span className="path__when">{s.when}</span>
@@ -183,7 +186,8 @@ export function Path() {
               <span className="path__detail">{s.detail}</span>
             </li>
           ))}
-        </ol>
+          </ol>
+        </div>
       </div>
     </section>
   );
@@ -191,12 +195,12 @@ export function Path() {
 
 export function Contact() {
   return (
-    <section className="section contact" id="contact" aria-labelledby="contact-title">
+    <section className="section contact" aria-labelledby="contact">
       <div className="wrap">
         <CurrentRule seed={5} className="section__rule" />
       </div>
       <div className="wrap">
-        <h2 id="contact-title" className="contact__title">
+        <h2 id="contact" className="contact__title">
           Let’s build models that last.
         </h2>
         <p className="lede contact__lede">

@@ -1,18 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Nav } from "./site/Nav";
 import { Hero } from "./site/Hero";
 import { Glance, Systems, Practice, Path, Contact, Footer } from "./site/Sections";
 import { CaseStudy } from "./site/CaseStudy";
-import { useRoute, useTheme } from "./site/hooks";
+import { scrollToTarget, useRoute, useTheme } from "./site/hooks";
 
 export default function App() {
   const route = useRoute();
   const [theme, toggleTheme] = useTheme();
 
+  // a section hash arriving from load or another page jumps straight there; in-page nav clicks animate (Nav)
+  const lastPage = useRef<string | null>(null);
   useEffect(() => {
-    if (route.page === "home" && route.section) {
-      document.getElementById(route.section)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    const arriving = lastPage.current !== "home";
+    lastPage.current = route.page;
+    if (route.page !== "home" || !route.section) return;
+    const el = document.getElementById(route.section);
+    if (!el) return;
+    scrollToTarget(el, arriving);
+    if (arriving) document.fonts?.ready.then(() => scrollToTarget(el, true));
   }, [route]);
 
   return (
