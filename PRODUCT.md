@@ -35,7 +35,7 @@ MLOps comes first: production deployment, pipelines, evaluation, observability, 
 ## Capabilities and Constraints
 
 - **Stack:** Vite 6 + React 18 + TypeScript. The site lives in `src/app/site/` with plain CSS in `src/styles/site.css`; all visitor-facing facts live in `src/content/profile.ts` and `src/content/caseStudies.ts`. Tailwind and the React plugin must stay in `vite.config.ts` (Figma Make export).
-- **Deploy:** GitHub Pages via `.github/workflows/deploy.yml`, served under the base path `/my-portfolio/`.
+- **Deploy:** Vercel (Vite preset, `pnpm build` → `dist`), served from the root path `/`. GitHub Pages is retired.
 - **Structure today:** one page (Hero, The short version, Systems, How I ship models, Path, Contact) plus a case-study route per system at `#/systems/<slug>`.
 
 ## Brand Commitments

@@ -3,3 +3,8 @@ dist/
 *_tmp*
 .env
 .DS_Store
+# local design tooling and reference images (kept on disk, not in the repo)
+.impeccable/
+.claude/
+/*.png
+/*.jpg
