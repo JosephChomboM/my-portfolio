@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ArrowRight, ArrowUpRight, Check, Copy, Download } from "lucide-react";
 
 type Kind = "primary" | "secondary";
 type Icon = "next" | "out" | "down";
@@ -41,5 +41,35 @@ export function Cta({
       <span className="cta__label">{children}</span>
       <I className="cta__icon" size={16} strokeWidth={1.75} aria-hidden="true" />
     </a>
+  );
+}
+
+/** Copies the email for visitors without a mail client; confirms in place, then resets. */
+export function CopyCta({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+  const timer = useRef(0);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  if (!text) return null;
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const t = document.createElement("textarea");
+      t.value = text;
+      document.body.appendChild(t);
+      t.select();
+      document.execCommand("copy");
+      t.remove();
+    }
+    setCopied(true);
+    clearTimeout(timer.current);
+    timer.current = window.setTimeout(() => setCopied(false), 2200);
+  };
+  const I = copied ? Check : Copy;
+  return (
+    <button type="button" className={`cta cta--secondary cta--copy${copied ? " is-copied" : ""}`} onClick={copy}>
+      <span className="cta__label" aria-live="polite">{copied ? "Copied" : "Copy email"}</span>
+      <I className="cta__icon" size={16} strokeWidth={1.75} aria-hidden="true" />
+    </button>
   );
 }

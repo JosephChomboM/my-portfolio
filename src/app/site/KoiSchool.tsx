@@ -28,6 +28,14 @@ type Koi = {
 type Dot = { lane: number; x: number; off: number; vx: number; r: number; a: number; tw: number; accent: boolean; dx: number; dy: number; vx2: number; vy2: number };
 
 const rand = (a: number, b: number) => a + Math.random() * (b - a);
+/** The same colour at zero alpha, so gradients fade without darkening. */
+const transparentOf = (c: string) => {
+  const h = c.replace("#", "");
+  const full = h.length === 3 ? h.split("").map((x) => x + x).join("") : h;
+  if (!/^[0-9a-f]{6}$/i.test(full)) return "rgba(0,0,0,0)";
+  const n = parseInt(full, 16);
+  return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},0)`;
+};
 const lerpAngle = (a: number, b: number, t: number) => a + ((((b - a) % TAU) + TAU + Math.PI) % TAU - Math.PI) * t;
 
 export function KoiSchool({ scatterKey, onStatus }: { scatterKey: number; onStatus: (s: SchoolStatus) => void }) {
@@ -249,23 +257,38 @@ export function KoiSchool({ scatterKey, onStatus }: { scatterKey: number; onStat
           th === end - turns ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
         }
       };
+      const clear = transparentOf(colors.line);
       for (let k = -1; k <= 1; k++) {
         const o = k * 5;
         ctx.globalAlpha = 0.16 + 0.08 * (1 - Math.abs(k)) + 0.03 * Math.sin(time * 0.4 + k);
         // arm A: lane 2 (upper inner) → spiral, ending at angle π (left)
+        // connectors fade in from (and out to) the current they share, so no seam doubles up the line
+        const ax0 = cx - R * 2.4, bx1 = cx + R * 2.4;
+        const fadeIn = ctx.createLinearGradient(ax0, 0, cx - R * 1.5, 0);
+        fadeIn.addColorStop(0, clear);
+        fadeIn.addColorStop(1, colors.line);
+        ctx.strokeStyle = fadeIn;
         ctx.beginPath();
-        const ax0 = cx - R * 2.4;
         ctx.moveTo(ax0, laneY(2, ax0, time) + o);
         ctx.bezierCurveTo(cx - R * 1.6, laneY(2, cx - R * 1.6, time) + o, cx - R * 1.05 - o, cy - R * 0.62, cx - R - o, cy);
         ctx.stroke();
+        ctx.strokeStyle = colors.line;
         ctx.beginPath();
         arm(Math.PI, o);
         ctx.stroke();
         // arm B: spiral → lane 3 (lower inner), leaving at angle 0 (right)
         ctx.beginPath();
         arm(0, o);
-        ctx.bezierCurveTo(cx + R * 1.05 + o, cy + R * 0.62, cx + R * 1.6, laneY(3, cx + R * 1.6, time) + o, cx + R * 2.4, laneY(3, cx + R * 2.4, time) + o);
         ctx.stroke();
+        const fadeOut = ctx.createLinearGradient(cx + R * 1.5, 0, bx1, 0);
+        fadeOut.addColorStop(0, colors.line);
+        fadeOut.addColorStop(1, clear);
+        ctx.strokeStyle = fadeOut;
+        ctx.beginPath();
+        ctx.moveTo(cx + R + o, cy);
+        ctx.bezierCurveTo(cx + R * 1.05 + o, cy + R * 0.62, cx + R * 1.6, laneY(3, cx + R * 1.6, time) + o, bx1, laneY(3, bx1, time) + o);
+        ctx.stroke();
+        ctx.strokeStyle = colors.line;
       }
       // dots ride the currents
       for (const p of dots) {

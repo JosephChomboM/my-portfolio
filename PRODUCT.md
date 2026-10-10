@@ -34,29 +34,28 @@ MLOps comes first: production deployment, pipelines, evaluation, observability, 
 
 ## Capabilities and Constraints
 
-- **Stack:** Vite 6 + React 18 + TypeScript, Tailwind 4 installed (components mostly use inline styles), shadcn/Radix UI kit in `src/app/components/ui/`, `motion` available. Exported from a Figma Make file (`figma:asset/` resolver in `vite.config.ts`; the React and Tailwind plugins must stay).
+- **Stack:** Vite 6 + React 18 + TypeScript. The site lives in `src/app/site/` with plain CSS in `src/styles/site.css`; all visitor-facing facts live in `src/content/profile.ts` and `src/content/caseStudies.ts`. Tailwind and the React plugin must stay in `vite.config.ts` (Figma Make export).
 - **Deploy:** GitHub Pages via `.github/workflows/deploy.yml`, served under the base path `/my-portfolio/`.
-- **Structure today:** a single page with sections Hero, Selected Work, AI Engineering Approach, Systems Architecture, Retrieval & Data, Technical Stack, About, Footer. The nav and footer mention "Writing", which does not exist yet.
-- **Open decisions:**
-  - Real project case studies have not been chosen yet (see Evidence on Hand).
-  - The footer lists a "Writing" section that has not been decided on.
+- **Structure today:** one page (Hero, The short version, Systems, How I ship models, Path, Contact) plus a case-study route per system at `#/systems/<slug>`.
 
 ## Brand Commitments
 
-- **Name:** Joseph Chombo. A logo mark exists (`src/imports/logo.jpg`).
-- **Role framing:** currently an AI Engineer in consumer finance and open to offers. Before that: model validation and automation in banking (IFRS 9). Systems Engineering student, graduating Dec 2026. The old "AI / ML engineering intern" copy is out of date.
-- **Location:** based in Peru, working remotely; overlaps US working hours.
-- **Employers:** may be named. Names are **pending** (bank; consumer-finance company); use marked slots until supplied.
+- **Name:** Joseph Chombo (full name Joseph Chombo Morocho). A koi logo mark exists (`src/imports/logo.jpg`).
+- **Role framing (from his CVs):** AI Engineer at Santander Consumer Peru (via Experis / ManpowerGroup), Sep 2026 to present. Before that: Machine Learning Engineer Intern, Model Risk Management, at Banco de Crédito del Perú (BCP), Jan 2025 to Aug 2026, which Joseph also describes as model validation and automation (IFRS 9). Earlier: freelance Full Stack Developer, Aug 2023 to Jan 2024. Open to offers.
+- **Education:** B.S. Information Systems Engineering, Universidad San Ignacio de Loyola (USIL), expected Nov 2026, top 20% of class.
+- **Credentials:** Microsoft Certified: SQL AI Developer Associate (DP-800); AWS Fundamentals; IBM Machine Learning. English professional (ICPNA certified), Spanish native.
+- **Location:** Lima, Peru, working remotely; overlaps US working hours.
+- **Employers:** named (Santander Consumer Peru, BCP).
 - **Voice:** calm, precise, systems-oriented, and confident without hype. Short declarative statements. Not a neon AI-startup or SaaS tone.
-- **Existing visual identity:** "Organic Intelligence", documented in `src/imports/pasted_text/design-system.md` with brand boards in `src/imports/`. That is visual authority for the next design pass to keep or replace. It is not product truth and is not recorded here.
+- **Visual identity:** recorded in DESIGN.md (the still-water koi world). The older "Organic Intelligence" file in `src/imports/pasted_text/` is superseded.
 
 ## Evidence on Hand
 
-- **Projects:** the four projects in the old copy are **mostly illustrative**. Case studies ship as **structure only**: the full case-study template with clearly marked placeholder slots, no written project content, until Joseph supplies real projects.
-- **Metrics:** every number on the site is a **placeholder**: 60% faster review, zero outages, +38% MRR@10, <200ms P95, 97% coverage, 12 issues caught, 80% faster incident response. Do not show them as real results, and never invent new ones.
-- **Tech stack list** (`TechStack.tsx`): Python, SQL, PySpark, Azure OpenAI, RAG, FAISS, BM25, MLflow, Databricks, Docker, FastAPI, PostgreSQL, and others. It is taken as Joseph's real toolset but has not been checked line by line.
-- **Contact and proof links:** Joseph will supply a real email, LinkedIn URL, GitHub URL, and a CV PDF. **Pending.** Current values (`joseph@example.com`, bare `linkedin.com`, `#`) are placeholders and must not ship as if they were real.
-- **No testimonials, employers, clients, press, or writing exist yet.** Do not invent any.
+- **Source of truth:** Joseph's CVs (MLOps, ML Engineer and AI Engineer versions, Oct 2026). The MLOps CV ships as `public/Joseph_Chombo_CV.pdf`; it includes his phone number.
+- **Real metrics (publishable):** about 60% less manual execution from automated model validation at BCP; SoftIA cut validation time-to-market by about 70% and was recognized two consecutive quarters. Never invent others.
+- **Real projects:** SoftIA (BCP, GenAI validation reports), QnA End-to-End Service (public repo github.com/JosephChomboM/qna-end-to-end-service), MLOps Pipeline for Churn Prediction, AI Operational Workflow Assistant. Problems, stacks, architecture stages and the evaluation/monitoring facts come from the CVs. **Still Joseph's to write:** constraints, key decisions and trade-offs, what he would do differently, project years, and the remaining evaluation details. These render as visible [bracketed] placeholders.
+- **Links:** email josephalexander0704@gmail.com, linkedin.com/in/josephchombomorocho, github.com/JosephChomboM.
+- **No testimonials, clients, press or writing exist.** Do not invent any.
 
 ## Product Principles
 

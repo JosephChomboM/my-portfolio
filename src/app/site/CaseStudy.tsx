@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { caseStudies } from "../../content/caseStudies";
+import { MiniFlow } from "./Lines";
+
+/** Renders [bracketed] text as a visible placeholder so unwritten parts never pass as fact. */
+function T({ children }: { children: string }) {
+  return (
+    <>
+      {children.split(/(\[[^\]]+\])/).map((part, i) =>
+        part.startsWith("[") ? <span key={i} className="pending">{part}</span> : part,
+      )}
+    </>
+  );
+}
 
 const TOC = [
   { id: "problem", label: "Problem" },
@@ -16,7 +28,11 @@ export function CaseStudy({ slug }: { slug: string }) {
   const [active, setActive] = useState("problem");
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // #/systems/<slug>/<section> lands on that section; a bare case link starts at the top
+    const section = window.location.hash.split("/")[3];
+    const target = section ? document.getElementById(section) : null;
+    if (target) target.scrollIntoView({ block: "start", behavior: "instant" as ScrollBehavior });
+    else window.scrollTo(0, 0);
     const els = TOC.map((t) => document.getElementById(t.id)).filter(Boolean) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
@@ -47,13 +63,13 @@ export function CaseStudy({ slug }: { slug: string }) {
         </a>
         <header className="case__head">
           <h1 className="case__title">{c.title}</h1>
-          <p className="case__summary">{c.summary}</p>
+          <p className="case__summary"><T>{c.summary}</T></p>
           <dl className="case__meta">
-            <div><dt>Domain</dt><dd>{c.domain}</dd></div>
-            <div><dt>Role</dt><dd>{c.role}</dd></div>
-            <div><dt>When</dt><dd>{c.timeframe}</dd></div>
+            <div><dt>Domain</dt><dd><T>{c.domain}</T></dd></div>
+            <div><dt>Role</dt><dd><T>{c.role}</T></dd></div>
+            <div><dt>When</dt><dd><T>{c.timeframe}</T></dd></div>
             <div><dt>Stack</dt><dd>{c.stack.join(" · ")}</dd></div>
-            {draft && <div><dt>Status</dt><dd>Draft, placeholder content</dd></div>}
+            {draft && <div><dt>Status</dt><dd>Write-up in progress</dd></div>}
           </dl>
         </header>
         <div className="case__layout">
@@ -61,8 +77,13 @@ export function CaseStudy({ slug }: { slug: string }) {
             <ol>
               {TOC.map((t) => (
                 <li key={t.id}>
-                  <a href={`#/systems/${c.slug}`} className={active === t.id ? "is-active" : undefined}
-                    onClick={(e) => { e.preventDefault(); document.getElementById(t.id)?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>
+                  <a href={`#/systems/${c.slug}/${t.id}`} className={active === t.id ? "is-active" : undefined}
+                    aria-current={active === t.id ? "location" : undefined}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      history.replaceState(null, "", `#/systems/${c.slug}/${t.id}`);
+                      document.getElementById(t.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}>
                     {t.label}
                   </a>
                 </li>
@@ -70,15 +91,16 @@ export function CaseStudy({ slug }: { slug: string }) {
             </ol>
           </nav>
           <article className="case__body">
-            <section id="problem"><h2>Problem</h2><p>{s.problem}</p></section>
-            <section id="constraints"><h2>Constraints</h2><ul>{s.constraints.map((x, i) => <li key={i}>{x}</li>)}</ul></section>
+            <section id="problem"><h2>Problem</h2><p><T>{s.problem}</T></p></section>
+            <section id="constraints"><h2>Constraints</h2><ul>{s.constraints.map((x, i) => <li key={i}><T>{x}</T></li>)}</ul></section>
             <section id="architecture">
               <h2>Architecture</h2>
               <figure className="arch">
+                <MiniFlow stages={s.architecture.stages} className="miniflow--case" />
                 <ol className="arch__flow">
-                  {s.architecture.stages.map((st, i) => <li key={i}>{st}</li>)}
+                  {s.architecture.stages.map((st, i) => <li key={i}><T>{st}</T></li>)}
                 </ol>
-                <figcaption>{s.architecture.caption}</figcaption>
+                <figcaption><T>{s.architecture.caption}</T></figcaption>
               </figure>
             </section>
             <section id="decisions">
@@ -86,9 +108,9 @@ export function CaseStudy({ slug }: { slug: string }) {
               <div className="decisions">
                 {s.decisions.map((d, i) => (
                   <div className="decision" key={i}>
-                    <p className="decision__choice">{d.choice}</p>
-                    <p className="decision__over"><span>over</span> {d.over}</p>
-                    <p className="decision__because">{d.because}</p>
+                    <p className="decision__choice"><T>{d.choice}</T></p>
+                    <p className="decision__over"><span>over</span> <T>{d.over}</T></p>
+                    <p className="decision__because"><T>{d.because}</T></p>
                   </div>
                 ))}
               </div>
@@ -96,11 +118,11 @@ export function CaseStudy({ slug }: { slug: string }) {
             <section id="evaluation">
               <h2>Evaluation and monitoring</h2>
               <div className="evalmon">
-                <div><h3>Before release</h3><p>{s.evaluation.evaluated}</p></div>
-                <div><h3>In production</h3><p>{s.evaluation.monitored}</p></div>
+                <div><h3>Before release</h3><p><T>{s.evaluation.evaluated}</T></p></div>
+                <div><h3>In production</h3><p><T>{s.evaluation.monitored}</T></p></div>
               </div>
             </section>
-            <section id="hindsight"><h2>What I would do differently</h2><p>{s.hindsight}</p></section>
+            <section id="hindsight"><h2>What I would do differently</h2><p><T>{s.hindsight}</T></p></section>
             <p className="case__repo">
               {c.repo ? (
                 <a className="cta cta--secondary cta--out" href={c.repo} target="_blank" rel="noopener noreferrer">

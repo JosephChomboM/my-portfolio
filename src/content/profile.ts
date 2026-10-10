@@ -1,37 +1,59 @@
-// Every fact a visitor sees about Joseph lives here.
-// Values marked PENDING are placeholders. Replace them before the site goes public.
+// Every fact a visitor sees about Joseph lives here. Source: Joseph's CVs (Oct 2026).
 
 export const profile = {
   name: "Joseph Chombo",
+  fullName: "Joseph Chombo Morocho",
   roles: ["ML Engineer", "AI Engineer", "MLOps Engineer"],
   intro:
     "I deploy, evaluate and monitor machine learning in production, so models keep working long after launch.",
-  now: { role: "AI Engineer", org: "[Consumer-finance company]", domain: "Consumer finance" }, // PENDING: employer name
-  before: {
-    role: "Model validation & automation",
-    org: "[Bank]", // PENDING: employer name
-    domain: "Banking · IFRS 9",
-  },
+  now: { role: "AI Engineer", org: "Santander Consumer Peru", via: "via Experis / ManpowerGroup", domain: "Consumer finance" },
+  before: { role: "ML Engineer Intern, Model Risk Management", org: "BCP", domain: "Banking" },
   education: {
-    degree: "Systems Engineering",
-    school: "[University]", // PENDING: university name
-    graduation: "Dec 2026",
+    degree: "B.S. Information Systems Engineering",
+    school: "Universidad San Ignacio de Loyola (USIL)",
+    graduation: "Nov 2026",
+    note: "Top 20% of class",
   },
-  location: "Peru",
+  // newest first; drives the Path section
+  experience: [
+    {
+      when: "Sep 2026 – now",
+      role: "AI Engineer",
+      org: "Santander Consumer Peru",
+      detail:
+        "Backend APIs that connect internal databases and web apps to AI services, an LLM assistant on WhatsApp that answers sales KPI questions in plain language with automatic charts, RAG flows for grounded, traceable answers, and internal agents in Copilot Studio.",
+    },
+    {
+      when: "Jan 2025 – Aug 2026",
+      role: "ML Engineer Intern, Model Risk Management",
+      org: "Banco de Crédito del Perú (BCP)",
+      detail:
+        "Automated model validation on Databricks and PySpark, cutting manual execution by about 60%. MLflow tracking and versioning, Feature Store components, and monitoring for discrimination, stability and calibration (Gini, ROC-AUC, PSI). Built SoftIA, which cut validation time-to-market by about 70%.",
+    },
+    {
+      when: "Aug 2023 – Jan 2024",
+      role: "Full Stack Developer",
+      org: "Freelance",
+      detail: "An e-commerce platform in C#, .NET MVC, WebAssembly and SQL Server: products, users, inventory and purchase flows.",
+    },
+  ],
+  certifications: ["Microsoft Certified: SQL AI Developer Associate (DP-800)", "AWS Fundamentals", "IBM Machine Learning"],
+  languages: "English, professional (ICPNA certified) · Spanish, native",
+  location: "Lima, Peru",
   workStyle: "Remote · overlaps US working hours (UTC−5)",
   stack: [
-    { group: "Languages", items: ["Python", "SQL"] },
-    { group: "Cloud & data", items: ["Azure", "Databricks"] },
-    { group: "Serving", items: ["FastAPI", "Docker"] },
-    { group: "Retrieval", items: ["pgvector", "RAG"] },
-    { group: "Operations", items: ["CI/CD", "Model monitoring"] },
+    { group: "Languages", items: ["Python", "SQL", "PySpark"] },
+    { group: "MLOps", items: ["MLflow", "Databricks", "Model monitoring"] },
+    { group: "Serving", items: ["FastAPI", "Docker", "Kubernetes"] },
+    { group: "Retrieval", items: ["RAG", "pgvector", "Langfuse"] },
+    { group: "Cloud & CI/CD", items: ["Azure", "AWS", "GitHub Actions"] },
   ],
   // Empty strings render as clearly marked, non-clickable placeholders.
   links: {
-    email: "", // PENDING, e.g. "joseph@domain.com"
-    linkedin: "", // PENDING, e.g. "https://www.linkedin.com/in/handle"
-    github: "", // PENDING, e.g. "https://github.com/handle"
-    cv: "", // PENDING: add public/cv.pdf and set to "cv.pdf"
+    email: "josephalexander0704@gmail.com",
+    linkedin: "https://www.linkedin.com/in/josephchombomorocho",
+    github: "https://github.com/JosephChomboM",
+    cv: "Joseph_Chombo_CV.pdf",
   },
 } as const;
 

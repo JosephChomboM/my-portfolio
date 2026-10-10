@@ -28,7 +28,7 @@ export function Hero() {
         </p>
         <div className="hero__body">
           <p className="hero__intro">
-            {profile.intro} AI Engineer in consumer finance; before that, IFRS 9 model validation in banking.{" "}
+            {profile.intro} AI Engineer at {profile.now.org}; before that, ML model validation and automation at {profile.before.org}.{" "}
             <span className="hero__where">{profile.location} · remote · US hours</span>
           </p>
           <div className="hero__ctas">
@@ -47,17 +47,21 @@ export function Hero() {
           </div>
         </div>
         <div className="drift">
-          <p className={`drift__status is-${status.phase}`} role="status" aria-live="polite">
-            <span className="drift__dot" aria-hidden="true" />
+          {/* the readout updates several times a second; only phase changes are announced */}
+          <p className={`drift__status is-${status.phase}`} aria-hidden="true">
+            <span className="drift__dot" />
             <span className="drift__label">School drift</span>
             <span className="drift__value">{status.drift.toFixed(2)}</span>
             <span className="drift__phase">{PHASE_LABEL[status.phase]}</span>
           </p>
+          <span className="sr-only" role="status" aria-live="polite">
+            {status.phase === "stable" ? "School stable" : status.phase === "drifting" ? "Drift injected, school scattering" : "School regrouping"}
+          </span>
           <button
             type="button"
             className="drift__inject"
-            onClick={() => setScatterKey((k) => k + 1)}
-            disabled={status.phase !== "stable"}
+            onClick={() => { if (status.phase === "stable") setScatterKey((k) => k + 1); }}
+            aria-disabled={status.phase !== "stable"}
           >
             <Waves size={14} strokeWidth={1.6} aria-hidden="true" />
             {status.phase === "stable" ? "Inject drift" : status.phase === "drifting" ? "Scattering" : "Regrouping"}
