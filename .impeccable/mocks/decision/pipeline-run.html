@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Schibsted+Grotesk:wght@400;500;700;800&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:#07111F;color:#E6EEF8;font-family:'Schibsted Grotesk',sans-serif}
+.run{height:64px;display:flex;align-items:center;gap:28px;padding:0 72px 0 260px;background:#0A1A31;border-bottom:1px solid #16304F;font-size:15px;color:#9DB2CF}
+.run .dot{width:9px;height:9px;border-radius:50%;background:#6FA8E8;display:inline-block;margin-right:10px}
+.run b{color:#E6EEF8;font-weight:500}
+.run .r{margin-left:auto;display:flex;gap:10px}
+.btn{background:#CFE0F5;color:#07111F;font-weight:700;padding:11px 20px;border-radius:999px;font-size:14px}
+.ghost{border:1px solid #1E3A63;padding:10px 16px;border-radius:999px;font-size:14px;color:#E6EEF8}
+.brand{position:absolute;left:56px;top:16px;display:flex;align-items:center;gap:12px;font-family:Jost;letter-spacing:.3em;font-size:12px;font-weight:500;color:#E6EEF8}
+svg.spine{position:absolute;left:40px;top:64px;width:200px;height:836px}
+.sl{font-family:'Fragment Mono';font-size:12px;fill:#9DB2CF;letter-spacing:.08em}
+.sl.on{fill:#E6EEF8}
+.stage{position:absolute;left:260px;top:120px;right:72px}
+.lbl{font-family:'Fragment Mono';font-size:14px;color:#6FA8E8;letter-spacing:.08em}
+h1{font-size:164px;line-height:.86;font-weight:800;letter-spacing:-.045em;margin-top:26px}
+.roles{font-size:38px;font-weight:700;margin-top:28px;letter-spacing:-.01em}
+.roles em{font-style:normal;color:#6FA8E8}
+.out{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;border-top:1px solid #16304F}
+.out div{padding:22px 32px 0 0}
+.out dt{font-family:'Fragment Mono';font-size:12px;color:#6FA8E8;letter-spacing:.08em;margin-bottom:10px}
+.out dd{font-size:21px;line-height:1.35;font-weight:500;max-width:330px}
+.keys{display:flex;flex-wrap:wrap;gap:8px;margin-top:38px}
+.keys span{font-family:'Fragment Mono';font-size:13px;padding:6px 10px;border:1px solid #1E3A63;color:#CFE0F5;border-radius:4px}
+.next{position:absolute;left:260px;right:72px;bottom:0;height:56px;border-top:1px solid #16304F;display:flex;align-items:center;font-family:'Fragment Mono';font-size:13px;color:#9DB2CF;letter-spacing:.06em}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="k" viewBox="0 0 64 64" fill="none" stroke-linecap="round"><path d="M12 6C30 8 50 24 54 46M12 6C8 22 14 38 30 46M54 46C46 34 34 34 28 42M30 42C26 50 28 56 34 60M38 44C41 50 41 54 38 58" stroke="currentColor" stroke-width="4"/></symbol></defs></svg>
+<div class="brand"><svg width="28" height="28"><use href="#k"/></svg>JOSEPH CHOMBO</div>
+<div class="run"><span><span class="dot"></span><b>Open to roles</b></span><span>MLOps · AI · ML Engineer</span><span>Peru, remote, US hours</span><span class="r"><span class="btn">Email me</span><span class="ghost">CV</span><span class="ghost">LinkedIn</span><span class="ghost">GitHub</span></span></div>
+<svg class="spine" viewBox="0 0 200 836" fill="none">
+<g stroke="#2B5A93"><path d="M40 0C20 160 60 300 40 460S20 700 40 836"/><path d="M48 0C30 170 70 310 48 470S30 700 48 836" opacity=".6"/><path d="M32 0C14 150 52 290 32 450S12 700 32 836" opacity=".5"/></g>
+<g fill="#07111F" stroke="#6FA8E8" stroke-width="1.5"><circle cx="40" cy="92" r="9" fill="#CFE0F5"/><circle cx="44" cy="232" r="6"/><circle cx="42" cy="372" r="6"/><circle cx="38" cy="512" r="6"/><circle cx="36" cy="652" r="6"/><circle cx="40" cy="792" r="6"/></g>
+<text x="64" y="96" class="sl on">01 WHO</text><text x="64" y="236" class="sl">02 PATH</text><text x="64" y="376" class="sl">03 SYSTEMS</text><text x="64" y="516" class="sl">04 STACK</text><text x="64" y="656" class="sl">05 PRACTICE</text><text x="64" y="796" class="sl">06 CONTACT</text>
+<g style="color:#CFE0F5"><use href="#k" x="26" y="130" width="28" height="28" transform="rotate(160 40 144)"/><use href="#k" x="30" y="290" width="22" height="22" transform="rotate(175 41 301)"/><use href="#k" x="22" y="420" width="26" height="26" transform="rotate(150 35 433)"/><use href="#k" x="28" y="590" width="20" height="20" transform="rotate(170 38 600)" style="color:#6FA8E8"/></g>
+</svg>
+<section class="stage">
+<p class="lbl">01 / WHO</p>
+<h1>Joseph Chombo</h1>
+<p class="roles">MLOps Engineer <em>· AI Engineer · ML Engineer</em></p>
+<dl class="out">
+<div><dt>NOW</dt><dd>AI Engineer in consumer finance</dd></div>
+<div><dt>BEFORE</dt><dd>Model validation and automation for IFRS 9 credit models in banking</dd></div>
+<div><dt>STUDYING</dt><dd>Systems Engineering, graduating December 2026</dd></div>
+</dl>
+<div class="keys"><span>Python</span><span>SQL</span><span>Azure</span><span>Databricks</span><span>FastAPI</span><span>Docker</span><span>pgvector</span><span>RAG</span><span>CI/CD</span><span>Model monitoring</span></div>
+</section>
+<div class="next">↓ 02 / PATH — banking model risk → consumer-finance AI</div>
+</body></html>

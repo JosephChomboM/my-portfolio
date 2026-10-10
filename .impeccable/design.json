@@ -1,0 +1,750 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-10T20:04:36+00:00",
+  "title": "Design System: Joseph Chombo · Production ML",
+  "extensions": {
+    "colorMeta": {
+      "ice": {
+        "role": "primary",
+        "displayName": "Ice",
+        "canonical": "#a8e6da",
+        "tonalRamp": [
+          "#113b33",
+          "#1e695a",
+          "#2b9681",
+          "#38c3a8",
+          "#63d2bd",
+          "#91dfd0",
+          "#beece3",
+          "#ebf9f7"
+        ]
+      },
+      "current": {
+        "role": "secondary",
+        "displayName": "Current",
+        "canonical": "#7fd6c6",
+        "tonalRamp": [
+          "#133a33",
+          "#216659",
+          "#2f9280",
+          "#3dbea7",
+          "#67cebb",
+          "#93ddcf",
+          "#c0ebe3",
+          "#ecf9f6"
+        ]
+      },
+      "koi-line": {
+        "role": "secondary",
+        "displayName": "Koi Line",
+        "canonical": "#c6efe6",
+        "tonalRamp": [
+          "#113c32",
+          "#1e6959",
+          "#2a977f",
+          "#37c4a5",
+          "#63d3ba",
+          "#90e0ce",
+          "#beede2",
+          "#ebf9f6"
+        ]
+      },
+      "foam": {
+        "role": "primary",
+        "displayName": "Foam",
+        "canonical": "#ddf3ee",
+        "tonalRamp": [
+          "#143930",
+          "#236455",
+          "#328f7a",
+          "#42ba9e",
+          "#6bcbb5",
+          "#96daca",
+          "#c1e9e0",
+          "#ecf8f6"
+        ]
+      },
+      "vermilion": {
+        "role": "tertiary",
+        "displayName": "Vermilion",
+        "canonical": "#e8643c",
+        "tonalRamp": [
+          "#441608",
+          "#79270e",
+          "#ad3814",
+          "#e1491b",
+          "#ea714c",
+          "#f09a80",
+          "#f6c3b4",
+          "#fcede8"
+        ]
+      },
+      "deep-water": {
+        "role": "neutral",
+        "displayName": "Deep Water",
+        "canonical": "#041214",
+        "tonalRamp": [
+          "#0d3940",
+          "#166570",
+          "#2091a1",
+          "#2abdd1",
+          "#58cdde",
+          "#89dbe7",
+          "#b9eaf1",
+          "#eaf9fb"
+        ]
+      },
+      "deep-water-raised": {
+        "role": "neutral",
+        "displayName": "Raised Water",
+        "canonical": "#061a1c",
+        "tonalRamp": [
+          "#0e3a3f",
+          "#18676f",
+          "#22949f",
+          "#2cc0cf",
+          "#5ad0dc",
+          "#8adee6",
+          "#baebf0",
+          "#eaf9fb"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "#082022",
+        "tonalRamp": [
+          "#0f3a3e",
+          "#1a676d",
+          "#25939c",
+          "#30c0cb",
+          "#5dcfd9",
+          "#8cdde4",
+          "#bbebef",
+          "#eaf9fa"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#12302f",
+        "tonalRamp": [
+          "#153836",
+          "#256260",
+          "#358c89",
+          "#45b7b3",
+          "#6dc8c5",
+          "#98d8d6",
+          "#c2e8e7",
+          "#ecf8f8"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#1f4744",
+        "tonalRamp": [
+          "#173533",
+          "#295e5a",
+          "#3b8681",
+          "#4cafa8",
+          "#74c2bc",
+          "#9cd4d0",
+          "#c5e6e3",
+          "#edf7f7"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Text",
+        "canonical": "#e4f4f1",
+        "tonalRamp": [
+          "#163630",
+          "#276055",
+          "#38897a",
+          "#49b39f",
+          "#71c5b5",
+          "#9ad6cb",
+          "#c3e7e0",
+          "#edf8f6"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Muted Text",
+        "canonical": "#9dbfb9",
+        "tonalRamp": [
+          "#1e2e2b",
+          "#35524d",
+          "#4c756e",
+          "#63988f",
+          "#86b0a8",
+          "#a9c7c2",
+          "#ccdedb",
+          "#f0f5f4"
+        ]
+      },
+      "text-faint": {
+        "role": "neutral",
+        "displayName": "Faint Text",
+        "canonical": "#6f938d",
+        "tonalRamp": [
+          "#212c2a",
+          "#3a4d4a",
+          "#536e6a",
+          "#6c908a",
+          "#8da9a4",
+          "#aec2bf",
+          "#cfdbd9",
+          "#f0f4f3"
+        ]
+      },
+      "light-ground": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f2f7f6",
+        "tonalRamp": [
+          "#1d2f2c",
+          "#33534d",
+          "#4a786e",
+          "#609c90",
+          "#83b3a9",
+          "#a7c9c2",
+          "#cbdfdb",
+          "#eff5f4"
+        ]
+      },
+      "light-ground-raised": {
+        "role": "neutral",
+        "displayName": "Raised Paper",
+        "canonical": "#e8f1ef",
+        "tonalRamp": [
+          "#1d302b",
+          "#33544d",
+          "#49786e",
+          "#5f9c8f",
+          "#82b3a8",
+          "#a7c9c2",
+          "#cbdfdb",
+          "#eff5f4"
+        ]
+      },
+      "light-panel": {
+        "role": "neutral",
+        "displayName": "Light Panel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#434343",
+          "#616161",
+          "#7e7e7e",
+          "#9b9b9b",
+          "#b8b8b8",
+          "#d5d5d5",
+          "#f2f2f2"
+        ]
+      },
+      "light-hairline": {
+        "role": "neutral",
+        "displayName": "Light Hairline",
+        "canonical": "#d3e2df",
+        "tonalRamp": [
+          "#1e2e2b",
+          "#36514c",
+          "#4d746c",
+          "#64988d",
+          "#86afa7",
+          "#a9c7c1",
+          "#ccdeda",
+          "#f0f5f4"
+        ]
+      },
+      "light-hairline-strong": {
+        "role": "neutral",
+        "displayName": "Light Strong Hairline",
+        "canonical": "#a9c6c1",
+        "tonalRamp": [
+          "#1e2e2b",
+          "#36514c",
+          "#4d746d",
+          "#64978e",
+          "#87afa8",
+          "#aac6c1",
+          "#cddedb",
+          "#f0f5f4"
+        ]
+      },
+      "light-text": {
+        "role": "neutral",
+        "displayName": "Ink Water",
+        "canonical": "#06201f",
+        "tonalRamp": [
+          "#0c403e",
+          "#15726e",
+          "#1ea39e",
+          "#28d4cd",
+          "#56dfda",
+          "#87e9e5",
+          "#b8f2f0",
+          "#eafbfa"
+        ]
+      },
+      "light-text-muted": {
+        "role": "neutral",
+        "displayName": "Light Muted Text",
+        "canonical": "#2f5552",
+        "tonalRamp": [
+          "#1b3130",
+          "#305754",
+          "#457c78",
+          "#59a29c",
+          "#7eb8b3",
+          "#a4ccc9",
+          "#c9e1df",
+          "#eff6f5"
+        ]
+      },
+      "light-text-faint": {
+        "role": "neutral",
+        "displayName": "Light Faint Text",
+        "canonical": "#4b6e6a",
+        "tonalRamp": [
+          "#1f2d2c",
+          "#37504d",
+          "#4e736f",
+          "#669590",
+          "#88aea9",
+          "#abc5c2",
+          "#cddddb",
+          "#f0f5f4"
+        ]
+      },
+      "light-ice": {
+        "role": "primary",
+        "displayName": "Deep Kelp",
+        "canonical": "#1d6b62",
+        "tonalRamp": [
+          "#103c37",
+          "#1d6a61",
+          "#29988b",
+          "#36c6b5",
+          "#61d4c7",
+          "#8fe1d7",
+          "#bdede8",
+          "#ebfaf8"
+        ]
+      },
+      "light-koi-line": {
+        "role": "secondary",
+        "displayName": "Light Koi Line",
+        "canonical": "#1f5f58",
+        "tonalRamp": [
+          "#133a35",
+          "#21665e",
+          "#309287",
+          "#3ebeb0",
+          "#68cec3",
+          "#94dcd4",
+          "#c0eae6",
+          "#ecf9f7"
+        ]
+      },
+      "light-current": {
+        "role": "secondary",
+        "displayName": "Light Current",
+        "canonical": "#3e8c80",
+        "tonalRamp": [
+          "#173530",
+          "#295d55",
+          "#3b867a",
+          "#4dae9f",
+          "#74c2b6",
+          "#9dd3cb",
+          "#c5e5e0",
+          "#edf7f6"
+        ]
+      },
+      "light-vermilion": {
+        "role": "tertiary",
+        "displayName": "Light Vermilion",
+        "canonical": "#cc4a22",
+        "tonalRamp": [
+          "#42180b",
+          "#742a13",
+          "#a53c1c",
+          "#d74e24",
+          "#e27553",
+          "#eb9d85",
+          "#f3c5b7",
+          "#fbede9"
+        ]
+      },
+      "accent-glow": {
+        "role": "tertiary",
+        "displayName": "Koi Bloom",
+        "canonical": "rgba(232, 100, 60, 0.45)",
+        "tonalRamp": [
+          "#441608",
+          "#77260e",
+          "#a93714",
+          "#db471a",
+          "#e96a44",
+          "#ef9276",
+          "#f5bead",
+          "#fcede8"
+        ]
+      },
+      "light-accent-glow": {
+        "role": "tertiary",
+        "displayName": "Light Koi Bloom",
+        "canonical": "rgba(204, 74, 34, 0.25)",
+        "tonalRamp": [
+          "#42180b",
+          "#722913",
+          "#a23b1b",
+          "#d24c23",
+          "#e16f4c",
+          "#e9967c",
+          "#f2c0b0",
+          "#fbede9"
+        ]
+      },
+      "ambient-tint": {
+        "role": "neutral",
+        "displayName": "Ambient Tint",
+        "canonical": "rgba(40, 140, 140, 0.16)",
+        "tonalRamp": [
+          "#113b3c",
+          "#1d6767",
+          "#2a9393",
+          "#36bebe",
+          "#5cd1d1",
+          "#88dddd",
+          "#b8ebeb",
+          "#ebf9f9"
+        ]
+      },
+      "light-ambient-tint": {
+        "role": "neutral",
+        "displayName": "Light Ambient Tint",
+        "canonical": "rgba(62, 140, 128, 0.12)",
+        "tonalRamp": [
+          "#173530",
+          "#295c54",
+          "#3a8378",
+          "#4baa9b",
+          "#6ebfb2",
+          "#95d0c7",
+          "#bfe3dd",
+          "#edf7f6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero only."
+      },
+      "display-contact": {
+        "displayName": "Display Contact",
+        "purpose": "Closing contact headline, max 13ch."
+      },
+      "headline-case": {
+        "displayName": "Headline Case",
+        "purpose": "Case-study page title."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "System row titles and case-study section heads."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Loop stage names, principles, career entries."
+      },
+      "roles": {
+        "displayName": "Roles",
+        "purpose": "The roles line under the name, in Ice."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text."
+      },
+      "body-long": {
+        "displayName": "Body Long",
+        "purpose": "Case-study prose in a 72ch column."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase fact terms, stack groups, case meta terms."
+      },
+      "telemetry": {
+        "displayName": "Telemetry",
+        "purpose": "Hero drift status line (School drift 0.xx, Stable / Drifting / Regrouping) and the Inject drift button label."
+      },
+      "body-compact": {
+        "displayName": "Body Compact",
+        "purpose": "16px reading under 560px, principle text, stack items."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": "Hero intro, 58ch."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Section and contact ledes, 60ch."
+      },
+      "ui-15": {
+        "displayName": "UI 15",
+        "purpose": "CTA labels, loop notes, case meta values, captions."
+      },
+      "ui-14": {
+        "displayName": "UI 14",
+        "purpose": "Nav links, nav Email button, stacks, footer, TOC, back link, architecture steps."
+      },
+      "ui-13": {
+        "displayName": "UI 13",
+        "purpose": "Drift row note, loop return caption, career dates, nav brand."
+      }
+    },
+    "shadows": [
+      {
+        "name": "accent-koi-bloom",
+        "value": "canvas shadowBlur 8px, shadowColor var(--accent-glow) = rgba(232, 100, 60, 0.45) dark / rgba(204, 74, 34, 0.25) light",
+        "purpose": "The only glow in the system: the soft bloom on the vermilion koi. No box shadows exist."
+      }
+    ],
+    "ambient": [
+      {
+        "name": "ambient",
+        "value": "radial-gradient(90% 70% at 50% -10%, {colors.ambient-tint}, transparent 65%)",
+        "light": "radial-gradient(90% 70% at 50% -10%, {colors.light-ambient-tint}, transparent 65%)",
+        "purpose": "Wash at the top of the hero."
+      },
+      {
+        "name": "nav-scrolled",
+        "value": "transparent at the top; past 8px scroll: background color-mix(in srgb, var(--bg) 94%, transparent); border-bottom 1px solid var(--line); no backdrop-filter",
+        "purpose": "The fixed nav's scrolled state. No surface in the system uses a blur."
+      },
+      {
+        "name": "grain",
+        "value": "fixed fractalNoise SVG (baseFrequency .9, 160px tile), mix-blend-mode overlay, opacity 0.05 dark / 0.03 light",
+        "purpose": "Film grain over the whole page; the system's only texture."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default easing for every state transition."
+      },
+      {
+        "name": "state-fast",
+        "value": "0.2s",
+        "purpose": "Link and icon-button color changes."
+      },
+      {
+        "name": "state",
+        "value": "0.3s to 0.35s",
+        "purpose": "Borders, row hover, nav scrolled tint, and underline draw."
+      },
+      {
+        "name": "sweep",
+        "value": "0.5s",
+        "purpose": "CTA hover gradient sweep."
+      },
+      {
+        "name": "cta-scan",
+        "value": "0.7s",
+        "purpose": "One-pass 1px scan line across a CTA on hover."
+      },
+      {
+        "name": "school-fade",
+        "value": "2.4s ease-out",
+        "purpose": "Koi school canvas fade-in on load."
+      },
+      {
+        "name": "drift",
+        "value": "impulse 150 to 300px/s, spring released 0.9s, then restored over 2.6s",
+        "purpose": "Inject drift: koi and dots scatter, then the currents regroup them. Readout goes Drifting, Regrouping, Stable."
+      },
+      {
+        "name": "cursor-avoid",
+        "value": "radius 150px, push (1 - d/150)^2 * 520",
+        "purpose": "Koi ease away from the mouse cursor."
+      },
+      {
+        "name": "breathe",
+        "value": "1.6s ease-in-out infinite",
+        "purpose": "Drift dot while regrouping."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation and transition durations 0.01ms; canvas renders one still frame; Inject drift reports Drifting, Regrouping (1.2s), Stable (2.6s) in the status line only",
+        "purpose": "Honors prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "lg",
+        "value": "1080px"
+      },
+      {
+        "name": "md",
+        "value": "820px"
+      },
+      {
+        "name": "sm",
+        "value": "560px"
+      }
+    ],
+    "focusRing": {
+      "value": "outline 2px solid var(--ice); outline-offset 3px; border-radius 1px",
+      "purpose": "Every focusable element."
+    },
+    "scrollbar": {
+      "value": "10px track in var(--bg); thumb var(--line-2), 10px radius, 3px var(--bg) border",
+      "purpose": "Page scrollbar."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled Foam CTA for the main action (Email). One per cluster.",
+      "html": "<a class=\"ds-cta ds-cta--primary\" href=\"#\"><span>Email me</span><svg class=\"ds-cta__icon\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-cta { position: relative; overflow: hidden; isolation: isolate; display: inline-flex; align-items: center; gap: 12px; height: 52px; padding: 0 20px 0 22px; font: 500 15px/1 var(--f-body, \"Archivo\", system-ui, sans-serif); letter-spacing: 0.005em; color: var(--text, #e4f4f1); border: 1px solid var(--line-2, #1f4744); background: transparent; text-decoration: none; border-radius: 0; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.15s cubic-bezier(0.16,1,0.3,1); } .ds-cta::after { content: \"\"; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ice, #a8e6da) 14%, transparent)); transform: translateX(-101%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-cta:hover { border-color: var(--ice, #a8e6da); } .ds-cta:hover::after { transform: translateX(0); } .ds-cta:active { transform: scale(0.985); } .ds-cta:focus-visible { outline: 2px solid var(--ice, #a8e6da); outline-offset: 3px; border-radius: 1px; } .ds-cta__icon { transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-cta:hover .ds-cta__icon { transform: translateX(3px); } .ds-cta--primary { background: var(--cta-bg, #ddf3ee); color: var(--cta-fg, #041214); border-color: var(--cta-bg, #ddf3ee); font-weight: 600; } .ds-cta--primary::after { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--current, #7fd6c6) 30%, transparent)); } .ds-cta--primary:hover { border-color: var(--cta-bg, #ddf3ee); }"
+    },
+    {
+      "name": "Secondary CTA",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hairline-bordered CTA for CV, LinkedIn, GitHub, with a direction-hinting icon.",
+      "html": "<a class=\"ds-cta2\" href=\"#\"><span>LinkedIn</span><svg class=\"ds-cta2__icon\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ".ds-cta2 { position: relative; overflow: hidden; isolation: isolate; display: inline-flex; align-items: center; gap: 12px; height: 52px; padding: 0 20px 0 22px; font: 500 15px/1 var(--f-body, \"Archivo\", system-ui, sans-serif); color: var(--text, #e4f4f1); border: 1px solid var(--line-2, #1f4744); background: transparent; text-decoration: none; border-radius: 0; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.15s; } .ds-cta2::after { content: \"\"; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ice, #a8e6da) 14%, transparent)); transform: translateX(-101%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-cta2:hover { border-color: var(--ice, #a8e6da); } .ds-cta2:hover::after { transform: translateX(0); } .ds-cta2:active { transform: scale(0.985); } .ds-cta2:focus-visible { outline: 2px solid var(--ice, #a8e6da); outline-offset: 3px; border-radius: 1px; } .ds-cta2__icon { transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-cta2:hover .ds-cta2__icon { transform: translate(2px, -2px); }"
+    },
+    {
+      "name": "Pending CTA",
+      "kind": "button",
+      "refersTo": "button-pending",
+      "description": "A link not yet supplied: shown, dashed, aria-disabled, not clickable.",
+      "html": "<span class=\"ds-cta-pending\" aria-disabled=\"true\" title=\"Link coming soon\"><span>GitHub</span><span class=\"ds-cta-pending__tag\">pending</span></span>",
+      "css": ".ds-cta-pending { display: inline-flex; align-items: center; gap: 12px; height: 52px; padding: 0 20px 0 22px; font: 500 15px/1 var(--f-body, \"Archivo\", system-ui, sans-serif); color: var(--text-3, #6f938d); border: 1px dashed var(--line-2, #1f4744); background: transparent; border-radius: 0; cursor: not-allowed; } .ds-cta-pending__tag { font-size: 11px; color: var(--text-3, #6f938d); border-bottom: 1px dashed var(--line-2, #1f4744); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed 64px bar, transparent at the top and tinted (94% ground mix, hairline border) once scrolled past 8px; no blur. Koi mark and JC, underline-drawing links, square theme toggle, then an Email text button.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__brand\" href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 100 100\" fill=\"none\" aria-hidden=\"true\"><path d=\"M18 8C50 10 80 34 84 70M18 8C12 34 22 58 46 70M84 70C74 52 56 50 48 62M48 62C42 74 44 86 52 94M60 66C64 76 64 86 58 94\" stroke=\"currentColor\" stroke-width=\"7\" stroke-linecap=\"round\"/><circle cx=\"88\" cy=\"14\" r=\"6\" fill=\"var(--accent, #e8643c)\"/></svg><span>JC</span></a><span class=\"ds-nav__links\"><a href=\"#\">Systems</a><a href=\"#\">Practice</a><a href=\"#\">Path</a><a href=\"#\">Contact</a></span><button type=\"button\" class=\"ds-nav__toggle\" aria-label=\"Switch to light mode\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41\"/></svg></button><a class=\"ds-nav__email\" href=\"#\">Email</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 40px; height: 64px; padding: 0 24px; background: transparent; border-bottom: 1px solid transparent; transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s cubic-bezier(0.16,1,0.3,1); color: var(--text, #e4f4f1); font-family: var(--f-body, \"Archivo\", system-ui, sans-serif); } .ds-nav.is-scrolled { background: color-mix(in srgb, var(--bg, #041214) 94%, transparent); border-bottom-color: var(--line, #12302f); } .ds-nav a { color: inherit; text-decoration: none; } .ds-nav__brand { display: inline-flex; align-items: center; gap: 10px; font: 600 13px/1 var(--f-body, \"Archivo\", sans-serif); letter-spacing: 0.14em; } .ds-nav__links { display: flex; gap: 6px; margin-left: auto; } .ds-nav__links a { position: relative; font-size: 14px; color: var(--text-2, #9dbfb9); padding: 8px 12px; transition: color 0.2s; } .ds-nav__links a::after { content: \"\"; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 1px; background: var(--ice, #a8e6da); transform: scaleX(0); transform-origin: left; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-nav__links a:hover { color: var(--text, #e4f4f1); } .ds-nav__links a:hover::after { transform: scaleX(1); } .ds-nav a:focus-visible, .ds-nav__toggle:focus-visible { outline: 2px solid var(--ice, #a8e6da); outline-offset: 3px; border-radius: 1px; } .ds-nav__toggle { width: 36px; height: 36px; display: grid; place-items: center; background: none; color: var(--text-2, #9dbfb9); border: 1px solid transparent; border-radius: 0; cursor: pointer; transition: color 0.2s, border-color 0.2s; } .ds-nav__toggle:hover { color: var(--text, #e4f4f1); border-color: var(--line-2, #1f4744); } .ds-nav__email { margin-left: 8px; font: 600 14px/1 var(--f-body, \"Archivo\", sans-serif); padding: 8px 14px; border: 1px solid var(--line-2, #1f4744); border-radius: 0; transition: border-color 0.2s, background-color 0.2s; } .ds-nav__email:hover { border-color: var(--ice, #a8e6da); background: var(--panel, #082022); } .ds-nav__email:focus-visible { outline: 2px solid var(--ice, #a8e6da); outline-offset: 3px; border-radius: 1px; }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Square uppercase status tag, used for Draft.",
+      "html": "<span class=\"ds-badge\">Draft</span>",
+      "css": ".ds-badge { display: inline-block; font: 600 11px/1 var(--f-body, \"Archivo\", system-ui, sans-serif); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2, #9dbfb9); padding: 6px 8px; border: 1px solid var(--line-2, #1f4744); border-radius: 0; }"
+    },
+    {
+      "name": "System Row",
+      "kind": "card",
+      "description": "Ruled list row in place of a card: serif title, muted summary, stack, arrow; panel fill and indent on hover.",
+      "html": "<a class=\"ds-system\" href=\"#\"><span class=\"ds-system__main\"><span class=\"ds-system__title\">Retrieval evaluation service</span><span class=\"ds-system__summary\">Structure only. Real project pending.</span></span><span class=\"ds-system__stack\">Python · FastAPI · pgvector</span><svg class=\"ds-system__arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-system { display: grid; grid-template-columns: minmax(0,1fr) auto 28px; align-items: center; gap: 24px 48px; padding: 30px 20px 30px 0; border-top: 1px solid var(--line, #12302f); border-bottom: 1px solid var(--line, #12302f); color: var(--text, #e4f4f1); text-decoration: none; transition: background-color 0.35s cubic-bezier(0.16,1,0.3,1), padding 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-system:hover { background: var(--panel, #082022); padding-left: 20px; } .ds-system:focus-visible { outline: 2px solid var(--ice, #a8e6da); outline-offset: 3px; border-radius: 1px; } .ds-system__main { display: grid; gap: 8px; } .ds-system__title { font: 400 clamp(24px, 2.3vw, 32px)/1.15 var(--f-display, \"Gilda Display\", Georgia, serif); letter-spacing: -0.01em; transition: color 0.3s; } .ds-system:hover .ds-system__title { color: var(--ice, #a8e6da); } .ds-system__summary { color: var(--text-2, #9dbfb9); font: 400 17px/1.6 var(--f-body, \"Archivo\", sans-serif); } .ds-system__stack { font: 400 14px/1 var(--f-body, \"Archivo\", sans-serif); color: var(--text-3, #6f938d); } .ds-system__arrow { color: var(--text-3, #6f938d); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), color 0.3s; } .ds-system:hover .ds-system__arrow { transform: translateX(4px); color: var(--ice, #a8e6da); }"
+    },
+    {
+      "name": "Practice Loop",
+      "kind": "custom",
+      "description": "Hairline timeline with open nodes, a filled diamond evaluation gate, and a dashed return path.",
+      "html": "<div class=\"ds-loop\"><ol class=\"ds-loop__stages\"><li><span class=\"ds-loop__node\"></span><span class=\"ds-loop__name\">Data</span></li><li><span class=\"ds-loop__node\"></span><span class=\"ds-loop__name\">Train</span></li><li class=\"is-gate\"><span class=\"ds-loop__node\"></span><span class=\"ds-loop__name\">Evaluate</span></li><li class=\"is-last\"><span class=\"ds-loop__node\"></span><span class=\"ds-loop__name\">Monitor</span></li></ol><p class=\"ds-loop__return\">Drift triggers retraining</p></div>",
+      "css": ".ds-loop { color: var(--text, #e4f4f1); font-family: var(--f-body, \"Archivo\", sans-serif); } .ds-loop__stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); position: relative; } .ds-loop__stages::before { content: \"\"; position: absolute; left: 0; right: 0; top: 6px; height: 1px; background: var(--line-2, #1f4744); } .ds-loop__stages li { position: relative; display: grid; gap: 8px; padding-right: 20px; } .ds-loop__node { width: 13px; height: 13px; border: 1px solid var(--ice, #a8e6da); background: var(--bg, #041214); border-radius: 50%; position: relative; z-index: 1; margin-bottom: 14px; } .is-gate .ds-loop__node { border-radius: 0; transform: rotate(45deg); background: var(--ice, #a8e6da); } .is-last .ds-loop__node { background: var(--ice, #a8e6da); } .ds-loop__name { font: 600 18px/1.2 var(--f-body, \"Archivo\", sans-serif); } .ds-loop__return { margin: 30px 0 0 25%; width: 60%; padding-top: 14px; border-top: 1px dashed var(--line-2, #1f4744); font: 500 13px/1.4 var(--f-body, \"Archivo\", sans-serif); letter-spacing: 0.02em; color: var(--ice, #a8e6da); }"
+    },
+    {
+      "name": "Drift Row",
+      "kind": "custom",
+      "refersTo": "drift-inject",
+      "description": "The hero's hairline-topped bottom row: Martian Mono drift status line, the one Inject drift button, and an illustrative note.",
+      "html": "<div class=\"ds-drift\"><p class=\"ds-drift__status\" role=\"status\"><span class=\"ds-drift__dot\"></span><span>School drift</span><span class=\"ds-drift__value\">0.02</span><span class=\"ds-drift__phase\">Stable</span></p><button type=\"button\" class=\"ds-drift__inject\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1\"/><path d=\"M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1\"/><path d=\"M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1\"/></svg>Inject drift</button><p class=\"ds-drift__note\">Illustrative. The school scatters like drifting data, then the currents bring it back.</p></div>",
+      "css": ".ds-drift { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding-top: 16px; border-top: 1px solid var(--line, #12302f); font-family: var(--f-body, \"Archivo\", system-ui, sans-serif); } .ds-drift__status { display: inline-flex; align-items: center; gap: 10px; margin: 0; font: 400 11px/1 var(--f-mono, \"Martian Mono\", ui-monospace, monospace); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3, #6f938d); font-variant-numeric: tabular-nums; } .ds-drift__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--current, #7fd6c6); } .ds-drift__value { color: var(--text, #e4f4f1); min-width: 4ch; } .ds-drift__phase { color: var(--ice, #a8e6da); } .ds-drift__inject { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; background: none; border: 1px solid var(--line-2, #1f4744); border-radius: 0; font: 400 11px/1 var(--f-mono, \"Martian Mono\", ui-monospace, monospace); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2, #9dbfb9); cursor: pointer; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), color 0.3s, background-color 0.3s; } .ds-drift__inject:hover:not(:disabled) { border-color: var(--ice, #a8e6da); color: var(--text, #e4f4f1); background: var(--panel, #082022); } .ds-drift__inject:disabled { cursor: default; opacity: 0.6; } .ds-drift__inject:focus-visible { outline: 2px solid var(--ice, #a8e6da); outline-offset: 3px; border-radius: 1px; } .ds-drift__note { margin: 0 0 0 auto; font-size: 13px; color: var(--text-3, #6f938d); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Still Water",
+    "overview": "A school of line-art koi drifts along hairline currents across a near-black ground with a teal undertone. The name sits large and calm beneath the school in a quiet serif. Everything else is hairline structure: rules, dashed connectors, small open nodes. The page holds still, and one living thing moves. The world is cool and almost monochrome (aqua, seafoam, ice on deep water), and a single warm vermilion appears only where the school's one odd koi swims.\n\nDensity is editorial, not dashboard. Sections run on generous vertical rhythm, lists are ruled rows instead of cards, and depth comes from tonal layering and a faint film grain, never from shadow. Motion is slow. The koi school canvas is the page's one moment, and it acts out one illustrative ML behaviour: drift. \"Inject drift\" scatters the school, then the currents regroup it, while a quiet status line reads the school's drift value and its state (Stable, Drifting, Regrouping). Otherwise the koi only ease away from the cursor. Reduced motion renders a still frame.\n\nConfirmed rejections: the neon, chrome, and glitch \"AI engineer\" look, and the headline-over-card-grid template. The sans display alternative (Jost) was tried and rejected.",
+    "keyCharacteristics": [
+      "Dark first on deep water (#041214), with a solid, fully tokened light mode.",
+      "Hairline line work (1px rules, about 1.15px koi strokes) in aqua and seafoam.",
+      "One vermilion spark, reserved for the accent koi, its light trail, a few dots, and the mark's dot.",
+      "Gilda Display for every headline, Archivo for reading and controls, Martian Mono only for the drift status line and the Inject drift button.",
+      "Square corners throughout; only dots and nodes are round.",
+      "Depth by tonal layering and film grain; no box shadows."
+    ],
+    "rules": [
+      {
+        "name": "The One Spark Rule",
+        "body": "Vermilion appears only on the accent koi, its trail, a handful of dots, the koi mark's dot, the Drifting state word and its dot, and the primary CTA's hover scan line. Never use it for text, headings, borders, fills, or section accents. Its rarity is the point.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cool Sea Rule",
+        "body": "All neutrals carry the teal undertone. Do not introduce warm greys, pure black, or pure white grounds in dark mode.",
+        "section": "colors"
+      },
+      {
+        "name": "The Theme Parity Rule",
+        "body": "Every color is read from a CSS custom property with dark and light values, including the canvas, which reads `--current`, `--koi`, `--accent`, and `--accent-glow` at runtime and redraws on theme change. No hard-coded colors in components. The static favicon is the one exception, and its hexes match `deep-water`, `koi-line`, and `vermilion` exactly.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Serif Weight Rule",
+        "body": "Gilda Display is always weight 400 with -0.01em tracking. No bold, italic, or faux weights, and no sans display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Instrument Voice Rule",
+        "body": "Martian Mono is reserved for the drift readout: the hero status line and the Inject drift button. Everything else, including the illustrative note, labels, and metadata, is Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "body": "Surfaces never cast shadows. A hover state shifts tone (panel fill) or line color (ice border), never elevation.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Single Bloom Rule",
+        "body": "The soft bloom on the vermilion koi is the only glow. Text, buttons, headings, and the other koi never glow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Dashed Means Pending Rule",
+        "body": "A dashed border or underline marks something not yet real (a pending link, an unnamed employer) or a return path. Never use dashes decoratively.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** read every color from the themed custom properties so dark and light stay in parity, including on canvas.",
+      "**Do** set every headline in Gilda Display at 400 with -0.01em tracking and balanced wrapping.",
+      "**Do** separate content with 1px hairlines and ruled rows; reach for a bordered box only for figures and decisions.",
+      "**Do** keep corners square; reserve round shapes for dots and nodes.",
+      "**Do** render missing links and names as marked pending slots (dashed, faint, `aria-disabled`), never as fake values.",
+      "**Do** keep motion slow (ease `cubic-bezier(0.16, 1, 0.3, 1)`, 0.2 to 0.5s for states) and honor reduced motion with a still frame, reporting drift states in the status line only.",
+      "**Do** let the koi canvas fill the whole hero, behind the nav; keep the nav transparent at the top and tint it (94% ground mix, hairline border) only once scrolled.",
+      "**Do** keep the hero's bottom row to the drift status line, the one Inject drift button, and the illustrative note."
+    ],
+    "donts": [
+      "**Don't** use Vermilion for text, headings, borders, fills, or section accents. It belongs to the koi, its trail, a few dots, the mark's dot, and the drifting state.",
+      "**Don't** use Martian Mono anywhere outside the drift status line and the Inject drift button.",
+      "**Don't** add koi behaviours beyond drift and easing away from the cursor.",
+      "**Don't** add box shadows, glows on text or buttons, neon, chrome, or glitch effects.",
+      "**Don't** set a sans-serif display face or bold the serif.",
+      "**Don't** lay content out as a headline over a grid of cards.",
+      "**Don't** use dashed lines decoratively; dashes mean pending or a return path."
+    ]
+  }
+}

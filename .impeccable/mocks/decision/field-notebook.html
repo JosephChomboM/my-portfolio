@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:#060F1E;font-family:Archivo,sans-serif;color:#EEF3FA}
+.desk{position:absolute;inset:0;background:#060F1E}
+.book{position:absolute;left:44px;top:40px;width:1300px;height:830px;display:grid;grid-template-columns:1fr 1fr;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+.pg{position:relative;background-color:#0E2140;background-image:linear-gradient(#1B3A66 1px,transparent 1px),linear-gradient(90deg,#1B3A66 1px,transparent 1px);background-size:26px 26px;overflow:hidden}
+.pg.l{border-radius:6px 0 0 6px}.pg.r{border-radius:0 6px 6px 0}
+.gutter{position:absolute;left:649px;top:0;width:2px;height:830px;background:#050C18;box-shadow:0 0 22px 10px rgba(3,8,16,.6);z-index:2}
+.grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:overlay;pointer-events:none}
+.label{position:absolute;left:52px;top:52px;background:#EEF3FA;color:#0B1B33;padding:22px 26px 20px;transform:rotate(-1.2deg);width:520px;box-shadow:0 6px 14px rgba(0,0,0,.35)}
+.label h1{font-size:76px;line-height:.88;font-weight:900;font-stretch:115%;letter-spacing:-.025em}
+.label p{font-size:15px;margin-top:12px;font-weight:600;letter-spacing:.02em;color:#2F6DB5}
+.hand{font-family:'Architects Daughter',cursive;color:#A9C8EE}
+.list{position:absolute;left:60px;top:300px;width:520px}
+.list h2{font-size:15px;font-weight:700;letter-spacing:.14em;color:#A9C8EE;margin-bottom:12px}
+.roles li{list-style:none;font-size:38px;font-weight:800;font-stretch:110%;line-height:1.15;display:flex;gap:16px;align-items:center}
+.roles li::before{content:"";width:22px;height:22px;border:2px solid #A9C8EE;display:inline-block;flex:none;background:linear-gradient(135deg,transparent 45%,#EEF3FA 45% 58%,transparent 58%)}
+.notes{display:grid;grid-template-columns:110px 1fr;gap:10px 18px;margin-top:30px;font-size:18px;line-height:1.35}
+.notes dt{font-size:13px;font-weight:700;letter-spacing:.14em;color:#A9C8EE;padding-top:4px}
+.bench{position:absolute;left:60px;bottom:52px;width:540px;font-size:17px;line-height:1.7}
+.bench b{font-size:13px;letter-spacing:.14em;color:#A9C8EE;display:block}
+.bench span{border-bottom:1.5px solid #2F6DB5;margin-right:12px;white-space:nowrap}
+.tabs{position:absolute;right:-6px;top:110px;display:flex;flex-direction:column;gap:10px;z-index:3}
+.tab{width:132px;padding:16px 14px;font-weight:800;font-size:16px;color:#0B1B33;border-radius:0 6px 6px 0;box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.t1{background:#EEF3FA}.t2{background:#A9C8EE}.t3{background:#6A9AD6}.t4{background:#2F6DB5;color:#EEF3FA}
+svg.draw{position:absolute;left:0;top:0;width:650px;height:830px}
+.a{font-family:'Architects Daughter';font-size:18px;fill:#A9C8EE}
+.s{font-family:Archivo;font-size:12px;font-weight:700;letter-spacing:.14em;fill:#EEF3FA}
+</style></head><body><div class="desk"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0"/></filter>
+<filter id="ink"><feTurbulence baseFrequency=".9" numOctaves="2" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="1.6"/></filter>
+<symbol id="k" viewBox="0 0 100 100" fill="none" stroke-linecap="round"><path d="M18 8C50 10 80 34 84 70M18 8C12 34 22 58 46 70M84 70C74 52 56 50 48 62M48 62C42 74 44 86 52 94M60 66C64 76 64 86 58 94" stroke="currentColor" stroke-width="6"/></symbol></defs></svg>
+<div class="book">
+<section class="pg l"><svg class="grain" width="100%" height="100%"><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<div class="label"><h1>JOSEPH<br>CHOMBO</h1><p>Production ML · Peru, remote, US hours</p></div>
+<div class="list"><h2>OPEN TO</h2><ul class="roles"><li>MLOps Engineer</li><li>AI Engineer</li><li>ML Engineer</li></ul>
+<dl class="notes"><dt>NOW</dt><dd>AI Engineer, consumer finance</dd><dt>BEFORE</dt><dd>IFRS 9 model validation &amp; automation, banking</dd><dt>STUDYING</dt><dd>Systems Engineering, Dec 2026</dd></dl></div>
+<p class="bench"><b>ON THE BENCH</b><span>Python</span><span>SQL</span><span>Azure</span><span>Databricks</span><span>FastAPI</span><span>Docker</span><span>pgvector</span><span>RAG</span><span>CI/CD</span><span>model monitoring</span></p>
+</section>
+<section class="pg r"><svg class="grain" width="100%" height="100%"><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<svg class="draw" viewBox="0 0 650 830" fill="none" filter="url(#ink)">
+<text x="56" y="76" class="a" style="font-size:26px;fill:#EEF3FA">How a model leaves my desk</text>
+<path d="M56 88C150 84 260 90 330 86" stroke="#2F6DB5" stroke-width="2"/>
+<g stroke="#A9C8EE" stroke-width="1.3" opacity=".7"><path d="M40 170C160 150 220 260 320 300S500 330 600 300"/><path d="M40 200C150 190 230 280 320 315S500 350 600 330"/><path d="M60 140C180 120 250 230 330 285S520 300 610 270"/></g>
+<g style="color:#EEF3FA"><use href="#k" x="70" y="120" width="54" height="54" transform="rotate(100 97 147)"/><use href="#k" x="160" y="170" width="40" height="40" transform="rotate(115 180 190)"/><use href="#k" x="240" y="230" width="48" height="48" transform="rotate(120 264 254)"/><use href="#k" x="350" y="280" width="36" height="36" transform="rotate(105 368 298)"/><use href="#k" x="440" y="290" width="44" height="44" transform="rotate(98 462 312)"/><use href="#k" x="530" y="270" width="30" height="30" transform="rotate(92 545 285)" style="color:#A9C8EE"/></g>
+<path d="M70 450H600" stroke="#EEF3FA" stroke-width="2"/>
+<g fill="#0E2140" stroke="#EEF3FA" stroke-width="2"><circle cx="80" cy="450" r="9"/><circle cx="185" cy="450" r="9"/><circle cx="290" cy="450" r="9"/><circle cx="395" cy="450" r="9"/><circle cx="500" cy="450" r="9"/><circle cx="590" cy="450" r="12" fill="#A9C8EE"/></g>
+<text x="80" y="485" class="s" text-anchor="middle">INGEST</text><text x="185" y="485" class="s" text-anchor="middle">FEATURES</text><text x="290" y="485" class="s" text-anchor="middle">TRAIN</text><text x="395" y="485" class="s" text-anchor="middle">EVALUATE</text><text x="500" y="485" class="s" text-anchor="middle">DEPLOY</text><text x="590" y="485" class="s" text-anchor="middle">MONITOR</text>
+<path d="M590 470C590 600 300 610 300 470" stroke="#A9C8EE" stroke-width="1.5" stroke-dasharray="5 7"/><path d="M296 482L300 470L306 481" stroke="#A9C8EE" stroke-width="1.5"/>
+<text x="350" y="590" class="a">retrain when drift crosses the line</text>
+<text x="70" y="660" class="a" style="fill:#EEF3FA">real-time scoring</text><path d="M66 654H222" stroke="#6A9AD6" stroke-width="2"/>
+<text x="232" y="660" class="a">→ nightly batch: latency allows, cost drops</text>
+<text x="70" y="706" class="a">every deploy ships with an eval + a rollback gate</text>
+<path d="M70 716C200 712 330 720 450 714" stroke="#2F6DB5" stroke-width="2"/>
+<text x="70" y="776" class="a" style="fill:#EEF3FA">→ systems inside, 01–04</text>
+</svg></section>
+<div class="gutter"></div>
+<div class="tabs"><span class="tab t1">Email</span><span class="tab t2">CV ↓</span><span class="tab t3">LinkedIn</span><span class="tab t4">GitHub</span></div>
+</div></body></html>

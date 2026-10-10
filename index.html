@@ -1,22 +1,25 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>aiml-portfolio-josephchombo</title>
-      <meta name="description" content="Creates customized designs by integrating user images with a design system, enabling efficient and consistent visual content creation for designers." />
-      <meta name="robots" content="noindex, nofollow" />
-      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-      
-    </head>
-
-    <body>
-      
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-      
-    </body>
-  </html>
-  
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joseph Chombo · ML, AI and MLOps Engineer</title>
+    <meta name="description" content="Joseph Chombo: MLOps, AI and ML Engineer. I deploy, evaluate and monitor machine learning in production. Peru, remote, US hours." />
+    <meta name="theme-color" content="#041214" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Archivo:wght@400..700&family=Martian+Mono:wght@300..500&display=swap" rel="stylesheet" />
+    <script>
+      try {
+        var t = localStorage.getItem("jc-theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

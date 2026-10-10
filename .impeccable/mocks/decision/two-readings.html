@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Schibsted+Grotesk:wght@400;500;700;800&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:#07111F;color:#E6EEF8;font-family:'Schibsted Grotesk',sans-serif}
+nav{height:84px;display:flex;align-items:center;padding:0 72px;gap:40px;border-bottom:1px solid #16304F}
+.brand{display:flex;align-items:center;gap:14px;font-family:Jost;letter-spacing:.32em;font-size:14px;font-weight:500}
+.lens{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:14px;color:#9DB2CF}
+.seg{display:flex;border:1px solid #1E3A63;border-radius:999px;padding:4px}
+.seg span{padding:9px 18px;border-radius:999px;font-size:14px}
+.seg .on{background:#CFE0F5;color:#07111F;font-weight:700}
+.cv{border:1px solid #6FA8E8;padding:11px 18px;border-radius:999px;font-size:14px}
+main{display:grid;grid-template-columns:1fr 1px 420px;height:816px}
+.brief{padding:64px 72px 0}
+.label{font-family:'Fragment Mono';font-size:13px;color:#6FA8E8;letter-spacing:.08em;margin-bottom:22px}
+h1{font-size:120px;line-height:.88;font-weight:800;letter-spacing:-.04em}
+.roles{display:flex;gap:28px;margin-top:30px;font-size:34px;font-weight:700;letter-spacing:-.01em}
+.roles span:not(:first-child){color:#6FA8E8}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px;border-top:1px solid #16304F;padding-top:24px;max-width:860px}
+.facts dt{font-family:'Fragment Mono';font-size:12px;color:#6FA8E8;letter-spacing:.08em;margin-bottom:10px}
+.facts dd{font-size:19px;line-height:1.4;font-weight:500}
+.keys{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px;max-width:860px}
+.keys span{font-family:'Fragment Mono';font-size:13px;padding:6px 10px;border:1px solid #1E3A63;color:#CFE0F5;border-radius:4px}
+.cta{display:flex;gap:12px;margin-top:36px}
+.btn{background:#CFE0F5;color:#07111F;font-weight:700;padding:16px 26px;border-radius:999px;font-size:16px}
+.ghost{border:1px solid #1E3A63;padding:15px 22px;border-radius:999px;font-size:15px}
+.rule{background:#16304F;position:relative}
+.margin{background:#0A1A31;padding:56px 44px 0;position:relative}
+.margin h2{font-size:26px;font-weight:700;line-height:1.15;letter-spacing:-.01em;margin-bottom:14px}
+.margin p{font-size:15px;line-height:1.55;color:#9DB2CF}
+.margin svg{display:block;margin:30px 0 26px}
+.stg{font-family:'Fragment Mono';font-size:12px;fill:#CFE0F5;letter-spacing:.06em}
+.note{font-family:'Fragment Mono';font-size:12px;line-height:1.7;color:#9DB2CF;border-left:2px solid #6FA8E8;padding-left:14px}
+svg.current{position:absolute;left:-30px;top:0;height:816px;width:60px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="k" viewBox="0 0 64 64" fill="none" stroke-linecap="round"><path d="M12 6C30 8 50 24 54 46M12 6C8 22 14 38 30 46M54 46C46 34 34 34 28 42M30 42C26 50 28 56 34 60M38 44C41 50 41 54 38 58" stroke="currentColor" stroke-width="4"/></symbol></defs></svg>
+<nav><div class="brand"><svg width="30" height="30" style="color:#E6EEF8"><use href="#k"/></svg><span>JOSEPH CHOMBO</span></div>
+<div class="lens">Reading as <div class="seg"><span class="on">Recruiter</span><span>Engineer</span></div></div><span class="cv">Download CV</span></nav>
+<main>
+<section class="brief">
+<p class="label">THE 30-SECOND READ</p>
+<h1>Joseph Chombo</h1>
+<div class="roles"><span>MLOps Engineer</span><span>AI Engineer</span><span>ML Engineer</span></div>
+<dl class="facts">
+<div><dt>NOW</dt><dd>AI Engineer, consumer finance</dd></div>
+<div><dt>BEFORE</dt><dd>Model validation and automation, IFRS 9 banking</dd></div>
+<div><dt>WHERE</dt><dd>Peru, remote, US working hours</dd></div>
+</dl>
+<div class="keys"><span>Python</span><span>SQL</span><span>Azure</span><span>Databricks</span><span>FastAPI</span><span>Docker</span><span>pgvector</span><span>RAG</span><span>CI/CD</span><span>Model monitoring</span></div>
+<div class="cta"><span class="btn">Email me</span><span class="ghost">LinkedIn</span><span class="ghost">GitHub</span></div>
+</section>
+<div class="rule"><svg class="current" viewBox="0 0 60 816" fill="none"><path d="M30 0C10 140 50 260 30 400S10 660 30 816" stroke="#2B5A93"/><g style="color:#CFE0F5"><use href="#k" x="14" y="150" width="30" height="30" transform="rotate(150 29 165)"/><use href="#k" x="18" y="420" width="24" height="24" transform="rotate(170 30 432)"/><use href="#k" x="12" y="640" width="28" height="28" transform="rotate(160 26 654)"/></g></svg></div>
+<aside class="margin">
+<p class="label">ENGINEERING MARGIN</p>
+<h2>Every model I ship has an eval, a monitor, and a way back.</h2>
+<p>Each system below opens into a case study: problem, constraints, architecture, trade-offs, evaluation, hindsight, repo.</p>
+<svg width="330" height="250" viewBox="0 0 330 250" fill="none">
+<path d="M20 20V230" stroke="#6FA8E8"/><g fill="#07111F" stroke="#6FA8E8" stroke-width="1.5"><circle cx="20" cy="20" r="6"/><circle cx="20" cy="62" r="6"/><circle cx="20" cy="104" r="6"/><circle cx="20" cy="146" r="6"/><circle cx="20" cy="188" r="6"/><circle cx="20" cy="230" r="7" fill="#CFE0F5"/></g>
+<path d="M28 230C120 230 120 104 28 104" stroke="#6FA8E8" stroke-dasharray="3 5"/>
+<text x="44" y="24" class="stg">INGEST</text><text x="44" y="66" class="stg">FEATURES</text><text x="44" y="108" class="stg">TRAIN</text><text x="44" y="150" class="stg">EVALUATE</text><text x="44" y="192" class="stg">DEPLOY</text><text x="44" y="234" class="stg">MONITOR</text><text x="130" y="172" class="stg" style="fill:#6FA8E8">RETRAIN ON DRIFT</text>
+</svg>
+<p class="note">decision · rollback gate before traffic shift<br>trade-off · batch scoring over real-time where latency allows</p>
+</aside>
+</main>
+</body></html>

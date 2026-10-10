@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Schibsted+Grotesk:wght@400;500;700;800&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:#07111F;color:#E6EEF8;font-family:'Schibsted Grotesk',sans-serif}
+.field{position:absolute;left:640px;top:0;right:0;bottom:0;background:#0A1A31}
+nav{position:absolute;top:0;left:0;right:0;height:84px;display:flex;align-items:center;padding:0 72px;gap:48px;z-index:3}
+.brand{display:flex;align-items:center;gap:14px;font-family:Jost;letter-spacing:.32em;font-size:14px;font-weight:500}
+nav ul{display:flex;gap:36px;list-style:none;font-size:15px;color:#9DB2CF;margin-left:auto}
+.cv{border:1px solid #6FA8E8;color:#E6EEF8;padding:11px 18px;border-radius:999px;font-size:14px}
+.copy{position:absolute;left:72px;top:150px;width:560px;z-index:3}
+.kick{font-family:'Fragment Mono';font-size:14px;color:#6FA8E8;letter-spacing:.04em;margin-bottom:28px}
+.kick b{color:#E6EEF8;font-weight:400}
+h1{font-size:112px;line-height:.9;font-weight:800;letter-spacing:-.035em}
+.lede{font-size:30px;line-height:1.2;margin-top:28px;font-weight:500;color:#E6EEF8;max-width:520px}
+.cred{font-size:17px;line-height:1.55;color:#9DB2CF;margin-top:22px;max-width:500px}
+.keys{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;max-width:540px}
+.keys span{font-family:'Fragment Mono';font-size:13px;padding:6px 10px;border:1px solid #1E3A63;color:#CFE0F5;border-radius:4px}
+.cta{display:flex;gap:12px;margin-top:34px;align-items:center}
+.btn{background:#CFE0F5;color:#07111F;font-weight:700;padding:16px 26px;border-radius:999px;font-size:16px}
+.ghost{border:1px solid #1E3A63;padding:15px 22px;border-radius:999px;font-size:15px;color:#E6EEF8}
+svg.school{position:absolute;left:560px;top:60px;width:900px;height:760px;z-index:2}
+.stage{font-family:'Fragment Mono';font-size:12px;fill:#9DB2CF;letter-spacing:.08em}
+.stage.on{fill:#E6EEF8}
+.peek{position:absolute;left:72px;right:72px;bottom:0;height:64px;border-top:1px solid #1E3A63;display:flex;align-items:center;gap:40px;font-size:15px;color:#9DB2CF;z-index:3}
+.peek b{color:#E6EEF8;font-weight:500}
+</style></head><body>
+<div class="field"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="k" viewBox="0 0 64 64" fill="none" stroke-linecap="round"><path d="M12 6C30 8 50 24 54 46M12 6C8 22 14 38 30 46M54 46C46 34 34 34 28 42M30 42C26 50 28 56 34 60M38 44C41 50 41 54 38 58" stroke="currentColor" stroke-width="4"/></symbol></defs></svg>
+<nav><div class="brand"><svg width="30" height="30" style="color:#E6EEF8"><use href="#k"/></svg><span>JOSEPH CHOMBO</span></div>
+<ul><li>Systems</li><li>Experience</li><li>Stack</li><li>Contact</li></ul><span class="cv">Download CV</span></nav>
+<div class="copy">
+<p class="kick"><b>MLOps Engineer</b> · AI Engineer · ML Engineer</p>
+<h1>Joseph<br>Chombo</h1>
+<p class="lede">I take models from notebook to production, and keep them observable once they're there.</p>
+<p class="cred">AI Engineer in consumer finance. Before that, model validation and automation for IFRS 9 in banking. Systems Engineering, graduating Dec 2026. Peru, remote, US hours.</p>
+<div class="keys"><span>Python</span><span>SQL</span><span>Azure</span><span>Databricks</span><span>FastAPI</span><span>Docker</span><span>pgvector</span><span>RAG</span><span>CI/CD</span><span>Model monitoring</span></div>
+<div class="cta"><span class="btn">Email me</span><span class="ghost">LinkedIn</span><span class="ghost">GitHub</span></div>
+</div>
+<svg class="school" viewBox="0 0 900 760" fill="none">
+<g stroke="#2B5A93" stroke-width="1" opacity=".55">
+<path d="M0 120C200 80 300 260 420 330S700 400 900 380"/><path d="M0 170C180 140 320 300 430 345S700 410 900 400"/>
+<path d="M20 60C240 40 330 230 440 320S720 360 900 340"/><path d="M0 240C160 230 300 330 420 360S720 430 900 430"/>
+<path d="M60 10C260 10 360 210 450 310S760 330 900 300"/><path d="M0 300C200 300 320 370 430 375S720 460 900 470"/>
+</g>
+<g stroke="#6FA8E8" stroke-width="1.2"><path d="M120 470H860"/></g>
+<path d="M800 470C800 600 260 610 300 470" stroke="#6FA8E8" stroke-width="1" stroke-dasharray="3 6"/>
+<text x="452" y="640" class="stage" text-anchor="middle">RETRAIN ON DRIFT</text>
+<g fill="#07111F" stroke="#6FA8E8" stroke-width="1.5">
+<circle cx="140" cy="470" r="7"/><circle cx="280" cy="470" r="7"/><circle cx="420" cy="470" r="7"/><circle cx="560" cy="470" r="7"/><circle cx="700" cy="470" r="7"/><circle cx="840" cy="470" r="9" fill="#CFE0F5"/></g>
+<text x="140" y="508" class="stage" text-anchor="middle">INGEST</text><text x="280" y="508" class="stage" text-anchor="middle">FEATURES</text><text x="420" y="508" class="stage" text-anchor="middle">TRAIN</text><text x="560" y="508" class="stage" text-anchor="middle">EVALUATE</text><text x="700" y="508" class="stage" text-anchor="middle">DEPLOY</text><text x="840" y="508" class="stage on" text-anchor="middle">MONITOR</text>
+<g style="color:#CFE0F5">
+<use href="#k" x="40" y="70" width="34" height="34" transform="rotate(70 57 87)"/><use href="#k" x="120" y="120" width="26" height="26" transform="rotate(80 133 133)"/>
+<use href="#k" x="200" y="100" width="40" height="40" transform="rotate(95 220 120)"/><use href="#k" x="250" y="190" width="28" height="28" transform="rotate(110 264 204)"/>
+<use href="#k" x="320" y="240" width="36" height="36" transform="rotate(115 338 258)"/><use href="#k" x="380" y="300" width="24" height="24" transform="rotate(105 392 312)"/>
+<use href="#k" x="460" y="320" width="30" height="30" transform="rotate(95 475 335)"/><use href="#k" x="540" y="350" width="22" height="22" transform="rotate(92 551 361)"/>
+<use href="#k" x="610" y="360" width="28" height="28" transform="rotate(90 624 374)"/><use href="#k" x="700" y="380" width="20" height="20" transform="rotate(92 710 390)"/>
+<use href="#k" x="160" y="200" width="20" height="20" transform="rotate(100 170 210)" style="color:#6FA8E8"/><use href="#k" x="300" y="150" width="22" height="22" transform="rotate(100 311 161)" style="color:#6FA8E8"/>
+<use href="#k" x="400" y="380" width="22" height="22" transform="rotate(110 411 391)" style="color:#6FA8E8"/><use href="#k" x="90" y="30" width="22" height="22" transform="rotate(75 101 41)" style="color:#6FA8E8"/>
+<use href="#k" x="660" y="590" width="20" height="20" transform="rotate(200 670 600)" style="color:#6FA8E8"/><use href="#k" x="420" y="606" width="18" height="18" transform="rotate(230 429 615)" style="color:#6FA8E8"/>
+</g>
+<g fill="#6FA8E8"><circle cx="230" cy="80" r="2"/><circle cx="350" cy="200" r="2"/><circle cx="510" cy="300" r="2"/><circle cx="660" cy="410" r="2"/><circle cx="180" cy="260" r="1.5"/></g>
+</svg>
+<div class="peek"><b>Selected systems</b><span>01 · Case study slot</span><span>02 · Case study slot</span><span>03 · Case study slot</span><span style="margin-left:auto">Scroll</span></div>
+</body></html>

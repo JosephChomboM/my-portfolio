@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:#04161A;color:#F4F7F6;font-family:Archivo,sans-serif}
+.grid{position:absolute;inset:0;display:grid;grid-template-columns:1.3fr 1fr .8fr 1.1fr;grid-template-rows:250px 210px;gap:10px;padding:10px}
+.ph{position:relative;overflow:hidden;outline:1px solid rgba(244,247,246,.35);outline-offset:-6px}
+.ph svg{position:absolute;inset:0;width:100%;height:100%}
+.ph:nth-child(1){grid-row:1/3}.ph:nth-child(4){grid-row:1/3}
+nav{position:absolute;top:0;left:0;right:0;height:64px;z-index:3;display:flex;align-items:center;gap:12px;padding:0 40px;font-weight:700;font-size:15px;letter-spacing:.14em;background:linear-gradient(#04161ACC,transparent)}
+nav ul{margin-left:auto;display:flex;gap:30px;list-style:none;font-weight:500;letter-spacing:.06em}
+.band{position:absolute;left:0;right:0;top:480px;bottom:0;background:#04161A;padding:44px 64px;display:grid;grid-template-columns:1.25fr 1fr;gap:64px}
+h1{font-size:118px;line-height:.9;font-weight:800;font-stretch:108%;letter-spacing:-.03em}
+.roles{font-size:26px;font-weight:600;margin-top:20px;color:#7FD1CF}
+.intro{font-size:20px;line-height:1.55;color:#DCE9E7;margin-top:8px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.cta span{border:1px solid #7FD1CF;padding:15px 22px;font-weight:600;font-size:16px}
+.cta .p{background:#F4F7F6;color:#04161A;border-color:#F4F7F6}
+.cap{position:absolute;right:64px;bottom:20px;font-size:13px;color:#5E8E8C;letter-spacing:.04em}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="k" viewBox="0 0 100 100" fill="none" stroke-linecap="round"><path d="M18 8C50 10 80 34 84 70M18 8C12 34 22 58 46 70M84 70C74 52 56 50 48 62M48 62C42 74 44 86 52 94M60 66C64 76 64 86 58 94" stroke="currentColor" stroke-width="7"/></symbol>
+<filter id="w1"><feTurbulence type="fractalNoise" baseFrequency=".006 .02" numOctaves="4" seed="4"/><feColorMatrix values=".1 0 0 0 .01 .45 .2 0 0 .08 .4 .3 0 0 .1 0 0 0 0 1"/></filter>
+<filter id="w2"><feTurbulence type="turbulence" baseFrequency=".012 .03" numOctaves="3" seed="9"/><feColorMatrix values=".15 0 0 0 .02 .3 .45 0 0 .1 .25 .5 0 0 .14 0 0 0 0 1"/></filter>
+<filter id="sc"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .45 0"/></filter>
+<radialGradient id="fade" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#04161A" stop-opacity="0"/><stop offset="1" stop-color="#04161A" stop-opacity=".75"/></radialGradient></defs></svg>
+<nav><svg width="26" height="26" style="color:#F4F7F6"><use href="#k"/></svg>JOSEPH CHOMBO<ul><li>Systems</li><li>Path</li><li>Practice</li><li>Contact</li></ul></nav>
+<div class="grid">
+<div class="ph"><svg><rect width="100%" height="100%" filter="url(#w1)"/><path d="M40 60L300 420M200 30L260 300" stroke="#fff" stroke-opacity=".18"/><rect width="100%" height="100%" filter="url(#sc)" opacity=".25"/><rect width="100%" height="100%" fill="url(#fade)"/></svg></div>
+<div class="ph"><svg><rect width="100%" height="100%" filter="url(#w2)"/><rect width="100%" height="100%" filter="url(#sc)" opacity=".25"/><rect width="100%" height="100%" fill="url(#fade)"/></svg></div>
+<div class="ph"><svg><rect width="100%" height="100%" filter="url(#w1)" transform="scale(1.6)"/><rect width="100%" height="100%" filter="url(#sc)" opacity=".3"/><rect width="100%" height="100%" fill="url(#fade)"/></svg></div>
+<div class="ph"><svg><rect width="100%" height="100%" filter="url(#w2)" transform="scale(1.3)"/><path d="M60 0L120 460M300 40L180 400" stroke="#fff" stroke-opacity=".14"/><rect width="100%" height="100%" filter="url(#sc)" opacity=".25"/><rect width="100%" height="100%" fill="url(#fade)"/></svg></div>
+<div class="ph"><svg><rect width="100%" height="100%" filter="url(#w1)" transform="scale(2.2)"/><rect width="100%" height="100%" filter="url(#sc)" opacity=".25"/><rect width="100%" height="100%" fill="url(#fade)"/></svg></div>
+<div class="ph"><svg><rect width="100%" height="100%" filter="url(#w2)" transform="scale(1.8)"/><rect width="100%" height="100%" filter="url(#sc)" opacity=".25"/><rect width="100%" height="100%" fill="url(#fade)"/></svg></div>
+</div>
+<section class="band"><div><h1>Joseph<br>Chombo</h1></div>
+<div><p class="roles">MLOps · AI · ML Engineer</p><p class="intro">Production ML: I deploy, evaluate and monitor models so they keep working after launch. AI Engineer in consumer finance; before that, IFRS 9 model validation in banking. Peru, remote, US hours.</p><div class="cta"><span class="p">Email me</span><span>Download CV</span><span>LinkedIn</span><span>GitHub</span></div></div>
+<p class="cap">Image panels: stand-ins for photography</p></section>
+</body></html>
