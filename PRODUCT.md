@@ -52,8 +52,8 @@ MLOps comes first: production deployment, pipelines, evaluation, observability, 
 ## Evidence on Hand
 
 - **Source of truth:** Joseph's CVs (MLOps, ML Engineer and AI Engineer versions, Oct 2026). The MLOps CV ships as `public/Joseph_Chombo_CV.pdf`; it includes his phone number.
-- **Real metrics (publishable):** about 60% less manual execution from automated model validation at BCP; SoftIA cut validation time-to-market by about 70% and was recognized two consecutive quarters. Never invent others.
-- **Real projects:** SoftIA (BCP, GenAI validation reports), QnA End-to-End Service (public repo github.com/JosephChomboM/qna-end-to-end-service), MLOps Pipeline for Churn Prediction, AI Operational Workflow Assistant. Problems, stacks, architecture stages and the evaluation/monitoring facts come from the CVs. **Still Joseph's to write:** constraints, key decisions and trade-offs, what he would do differently, project years, and the remaining evaluation details. These render as visible [bracketed] placeholders.
+- **Real metrics (publishable):** about 60% less manual execution from automated model validation at BCP; the AI Model-Validation Assistant cut validation time-to-market by about 70% and was recognized two consecutive quarters. Never invent others.
+- **Real projects:** AI Model-Validation Assistant (built at BCP, formerly the internal "SoftIA"; its case study stays generic and names neither, and its write-up comes from the system's own architecture docs), QnA End-to-End Service (public repo github.com/JosephChomboM/qna-end-to-end-service), MLOps Pipeline for Churn Prediction, AI Operational Workflow Assistant. Problems, stacks, architecture stages and the evaluation/monitoring facts come from the CVs. **Still Joseph's to write:** constraints, key decisions and trade-offs, what he would do differently, project years, and the remaining evaluation details. These render as visible [bracketed] placeholders.
 - **Links:** email josephalexander0704@gmail.com, linkedin.com/in/josephchombomorocho, github.com/JosephChomboM.
 - **No testimonials, clients, press or writing exist.** Do not invent any.
 

@@ -38,30 +38,71 @@ const TODO_HINDSIGHT = "[What you would do differently now, and why.]";
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "softia",
-    status: "draft",
-    title: "SoftIA",
+    slug: "ai-model-validation-assistant",
+    status: "published",
+    title: "AI Model-Validation Assistant",
     summary:
-      "A GenAI platform that automated model validation reports at BCP, cutting validation time-to-market by about 70%. Recognized two consecutive quarters for impact.",
+      "A RAG assistant that drafts methodological validation findings for credit-risk models, one per control, each citing the exact evidence behind it. It cut validation time-to-market by about 70% and was recognized two consecutive quarters for impact.",
     domain: "Banking · Model Risk Management",
-    role: "ML Engineer Intern, BCP",
+    role: "ML Engineer Intern, Model Risk Management",
     timeframe: "2025 – 2026",
-    stack: ["Python", "Azure AI Foundry", "OpenAI", "Databricks", "Streamlit"],
+    stack: ["Python", "Azure OpenAI", "Databricks", "Pydantic", "Streamlit"],
+    repo: "https://github.com/JosephChomboM/rag-observation-assistant",
     sections: {
       problem:
-        "Model validation in Model Risk Management ended in written conclusions and executive reports that were slow to produce. SoftIA automated the validation write-up, including conclusions and executive reports.",
-      constraints: ["[Data access and confidentiality inside the bank]", "[Review requirements for validation reports]", "[Latency, cost or model limits]"],
+        "Validating a credit-risk model ends in written findings: for every control in the methodology, a validator decides whether it is met, how critical a gap is, and which evidence proves it. The evidence is whatever the modelling team hands over, from PDFs and spreadsheets to SAS, SQL and Python, and writing it up by hand was the slow part. The assistant reads that corpus and drafts one finding per control, each with its criticality and the fragments that support it, so the validator reviews and signs off instead of starting from a blank page.",
+      constraints: [
+        "Traceability is a regulatory requirement, not a feature. A finding marked critical has consequences, so the reviewer has to be able to answer why the system said it: every finding must cite the file, the chunk and its retrieval score.",
+        "The knowledge changes on every run. The evidence is a new corpus each time, in a dozen formats, so nothing can be fine-tuned in, and the methodology itself changes whenever the source of truth does.",
+        "Every call is billed per input token, a request is capped at 50 MB, and Azure rate limits are tokens per minute. With high reasoning effort, every input token also competes with the reasoning budget.",
+        "This is a detection task, and a false positive costs hours of human review and erodes trust in the tool. Leaving noise out matters more than putting everything in.",
+      ],
       architecture: {
-        caption: "Validation outputs from Databricks feed LLM generation in Azure AI Foundry; reports are reviewed in a Streamlit app, with every run, its tokens and its cost tracked.",
-        stages: ["Validation data (Databricks)", "Prompting and generation (Azure OpenAI)", "Conclusions and reports", "Streamlit review app", "Run, token and cost tracking"],
-        topology: { gate: 3, sidecar: 4 },
+        caption:
+          "The reviewer's evidence is parsed, chunked and embedded once, cached by content hash. For each control, hybrid retrieval picks the fragments that apply and the whole files worth attaching; the model returns one structured finding per control; a validator reviews it; and every run records what was retrieved, its tokens and its cost.",
+        stages: [
+          "Evidence ingestion and chunking",
+          "Hybrid retrieval per control",
+          "Structured finding per control (Azure OpenAI)",
+          "Validator review",
+          "Retrieval, token and cost tracing",
+        ],
+        topology: { gate: 4, sidecar: 5 },
       },
-      decisions: TODO_DECISIONS,
+      decisions: [
+        {
+          choice: "Retrieval that routes long context",
+          over: "Putting the whole corpus in every call",
+          because:
+            "Stuffing bills the full corpus once per control and runs into the 50 MB cap. Retrieval caps the context at about 14K characters per control whether the reviewer uploaded 5 files or 500, and the corpus is embedded once. It is not retrieval instead of long context, though: when a chunk is retrieved, the whole source file is attached, PDFs at high detail, so retrieval decides which documents deserve a full read. That also produces the chunk-level citations the audit trail needs, which long context alone cannot.",
+        },
+        {
+          choice: "Dense plus BM25, fused by reciprocal rank",
+          over: "Cosine similarity alone",
+          because:
+            "The evidence is full of exact identifiers, such as date keys, variable names, tables and fields, and dense embeddings are weak at matching rare tokens. A local BM25 catches them, with a tokenizer that keeps underscores so a field name stays one token. Cosine and BM25 scores live on scales that cannot be added, and any weighting would need recalibrating every time the evidence changes; fusing by rank has nothing to tune.",
+        },
+        {
+          choice: "Lookup by ID for what is known, retrieval only for what is not",
+          over: "Retrieval for everything",
+          because:
+            "The system always knows which control it is evaluating, so its rules, limits, criticality and exceptions are read by ID from a manifest. Retrieving a rule it already knows would put a probabilistic error where there is certainty. Retrieval is kept for the one real unknown: which parts of this reviewer's evidence apply to this control.",
+        },
+        {
+          choice: "Conservative detection",
+          over: "Maximizing recall",
+          because:
+            "When the evidence is not enough to support a verdict, the control is reported at the highest criticality: missing proof counts as non-compliance, not as no finding. The optional reranker drops anything below its relevance threshold instead of filling the top-k, so an irrelevant chunk never reaches the model just to complete the quota.",
+        },
+      ],
       evaluation: {
-        evaluated: "[How report quality was checked before teams relied on it.]",
-        monitored: "Execution traceability, token and cost tracking, and result logs for each run.",
+        evaluated:
+          "Every output is validated before anyone reads it: a Pydantic schema constrains each finding, criticality is a fixed enum, and control IDs are cross-checked against the test. Each run also returns a retrieval trace per control: every chunk retrieved, its score, the channel that found it, its rerank relevance, and whether it was attached as a file or image. That trace separates a retrieval miss, where the right chunk was never found, from a generation miss, where it was there and the model ignored it, which is what makes improving the system possible. A validator signs off on every finding before it reaches a report.",
+        monitored:
+          "Token usage and cost per run, alongside the retrieval trace. The run also fails loudly if the embedding deployment that built the methodology index does not match the one in use, so incompatible vector spaces are never mixed.",
       },
-      hindsight: TODO_HINDSIGHT,
+      hindsight:
+        "Four gaps I would close. There is no OCR, so a scanned PDF yields no usable text. Images are indexed by a placeholder built from their file name and only read visually once retrieved, so generated captions or a multimodal index would find them better. There is no hard minimum score, so the top-k is always taken even when every candidate is weak; the prompt and the reranker mitigate that, but do not remove it. And the schema checks that each citation has the right shape, not that the cited chunk was actually among those sent to the model. The first two limit what evidence the system can read; the last two are where I would harden the audit trail.",
     },
   },
   {

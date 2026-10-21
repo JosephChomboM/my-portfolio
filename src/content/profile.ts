@@ -28,7 +28,7 @@ export const profile = {
       role: "ML Engineer Intern, Model Risk Management",
       org: "Banco de Crédito del Perú (BCP)",
       detail:
-        "Automated model validation on Databricks and PySpark, cutting manual execution by about 60%. MLflow tracking and versioning, Feature Store components, and monitoring for discrimination, stability and calibration (Gini, ROC-AUC, PSI). Built SoftIA, which cut validation time-to-market by about 70%.",
+        "Automated model validation on Databricks and PySpark, cutting manual execution by about 60%. MLflow tracking and versioning, Feature Store components, and monitoring for discrimination, stability and calibration (Gini, ROC-AUC, PSI). Built an AI model-validation assistant that cut validation time-to-market by about 70%.",
     },
     {
       when: "Aug 2023 – Jan 2024",
