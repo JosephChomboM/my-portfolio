@@ -7,7 +7,7 @@ export const profile = {
   intro:
     "I deploy, evaluate and monitor machine learning in production, so models keep working long after launch.",
   now: { role: "AI Engineer", org: "Santander Consumer Peru", via: "via Experis / ManpowerGroup", domain: "Consumer finance" },
-  before: { role: "ML Engineer Intern, Model Risk Management", org: "BCP", domain: "Banking" },
+  before: { role: "ML & AI Engineer Intern", org: "Banco de Crédito del Perú (BCP)", domain: "Banking" },
   education: {
     degree: "B.S. Information Systems Engineering",
     school: "Universidad San Ignacio de Loyola (USIL)",
@@ -25,7 +25,7 @@ export const profile = {
     },
     {
       when: "Jan 2025 – Aug 2026",
-      role: "ML Engineer Intern, Model Risk Management",
+      role: "ML & AI Engineer Intern, Model Risk Management",
       org: "Banco de Crédito del Perú (BCP)",
       detail:
         "Automated model validation on Databricks and PySpark, cutting manual execution by about 60%. MLflow tracking and versioning, Feature Store components, and monitoring for discrimination, stability and calibration (Gini, ROC-AUC, PSI). Built an AI model-validation assistant that cut validation time-to-market by about 70%.",
@@ -37,16 +37,22 @@ export const profile = {
       detail: "An e-commerce platform in C#, .NET MVC, WebAssembly and SQL Server: products, users, inventory and purchase flows.",
     },
   ],
-  certifications: ["Microsoft Certified: SQL AI Developer Associate (DP-800)", "AWS Fundamentals", "IBM Machine Learning"],
-  languages: "English, professional (ICPNA certified) · Spanish, native",
+  certifications: [
+    "Microsoft Certified: SQL AI Developer Associate (DP-800)",
+    "AWS Fundamentals Specialization",
+    "IBM Machine Learning Specialization",
+    "Inferential Statistics with Python (U. Michigan)",
+  ],
+  languages: "English, professional · Spanish, native",
   location: "Lima, Peru",
   workStyle: "Remote · overlaps US working hours (UTC−5)",
+  // Broad, recognizable skills a recruiter scans for; niche libraries stay in each case study's stack
   stack: [
-    { group: "Languages", items: ["Python", "SQL", "PySpark"] },
-    { group: "MLOps", items: ["MLflow", "Databricks", "Model monitoring"] },
-    { group: "Serving", items: ["FastAPI", "Docker", "Kubernetes"] },
-    { group: "Retrieval", items: ["RAG", "pgvector", "Langfuse"] },
-    { group: "Cloud & CI/CD", items: ["Azure", "AWS", "GitHub Actions"] },
+    { group: "Languages & data", items: ["Python", "SQL", "PySpark", "PostgreSQL"] },
+    { group: "Machine learning", items: ["scikit-learn", "TensorFlow", "Pandas", "Gradient boosting"] },
+    { group: "Generative AI", items: ["Azure OpenAI", "RAG", "Vector search", "AI agents"] },
+    { group: "MLOps & CI/CD", items: ["MLflow", "Databricks", "Model monitoring", "GitHub Actions"] },
+    { group: "Backend & cloud", items: ["FastAPI", "Docker", "Kubernetes", "Azure & AWS"] },
   ],
   // Empty strings render as clearly marked, non-clickable placeholders.
   links: {
