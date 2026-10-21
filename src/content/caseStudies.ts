@@ -66,28 +66,61 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "qna-end-to-end-service",
-    status: "draft",
+    status: "published",
     title: "QnA End-to-End Service",
     summary: "A retrieval service from corpus ingestion to LLM answers behind FastAPI, with its evaluation tracked in MLflow and deployed through CI/CD.",
     domain: "Personal project · RAG",
     role: "Sole engineer",
-    timeframe: "[Year]",
+    timeframe: "2026",
     stack: ["FastAPI", "Docker", "Kubernetes", "MLflow", "GitHub Actions"],
     repo: "https://github.com/JosephChomboM/qna-end-to-end-service",
     sections: {
-      problem: "An end-to-end question-answering service: ingest a corpus, embed it, search it, and generate grounded answers through an API that can be evaluated and redeployed safely.",
-      constraints: ["[Corpus size and update frequency]", "[Latency target for an answer]", "[Hosting and cost limits]"],
+      problem: "An end-to-end question-answering service: ingest a corpus, embed it, search it, and generate grounded answers through an API that can be evaluated and redeployed safely. It is built to show one problem pulling in each layer of a modern AI system only when it demands it, and to keep three things apart that are easy to confuse: a pass/fail eval gate in CI, offline run comparison in MLflow, and live request monitoring in Langfuse.",
+      constraints: [
+        "A synthetic knowledge base for a fictional fintech: 15 markdown documents, about 2,700 words, 30 chunks. I own every fact, so the eval has unambiguous ground truth and there is nothing to license. The corpus is static: an update means a full re-ingest that rebuilds the table.",
+        "Answers must come only from the retrieved context. When the context does not contain the answer, the model is told to say it does not have that information instead of guessing.",
+        "Every question spends two paid Azure OpenAI calls, one embedding and one chat completion, so a public endpoint needs per-IP and global rate limits, and the ingest endpoint, which drops and rebuilds the table, needs an admin token.",
+        "It runs locally on Docker Compose and on kind or minikube. It is not hosted publicly and no latency target was set; Langfuse records per-request latency instead.",
+      ],
       architecture: {
         caption: "Documents are ingested and embedded, retrieved by vector search, and answered by an LLM behind a FastAPI backend.",
         stages: ["Corpus ingestion", "Embeddings", "Vector search", "LLM answer", "FastAPI service"],
         topology: { joinAt: 2 },
       },
-      decisions: TODO_DECISIONS,
+      decisions: [
+        {
+          choice: "A frozen eval set over a synthetic corpus",
+          over: "Real documents and a question set that evolves",
+          because:
+            "With a corpus I wrote, every expected answer and its source document are known, so the gate measures the pipeline and not my labelling. The 20 questions are frozen on purpose: if they drift, MLflow runs stop being comparable and the CI gate turns into noise. The cost is an easy setting, which I come back to below.",
+        },
+        {
+          choice: "A thin hand-written pipeline on PostgreSQL and pgvector",
+          over: "A RAG framework or a managed vector database",
+          because:
+            "Ingest, chunk, embed, store, retrieve and answer fit in one module of plain Python and SQL, so each step stays visible and testable. At 30 chunks an exact cosine scan returns instantly, so there is no index to tune. The price is that nothing here would scale past a small corpus without adding one.",
+        },
+        {
+          choice: "Three tools for three lifecycle stages",
+          over: "One tool for all validation",
+          because:
+            "The same metrics, faithfulness and relevance, answer different questions at different times. The pytest eval gates a merge, MLflow compares chunk size, top-k and prompt across runs on the same frozen set, and Langfuse watches the running service request by request. Merging them would blur what each result means.",
+        },
+        {
+          choice: "Azure OpenAI for generation and embeddings",
+          over: "Gemini's free tier",
+          because:
+            "I tried Gemini through its OpenAI-compatible endpoint to run the demo for free. The model I started with had been retired for new users, and the replacement allowed 5 chat requests per minute. One eval run makes about 40 chat calls, so it would take close to ten minutes and could not serve as a CI gate. I kept Azure and capped the public endpoint with rate limits instead.",
+        },
+      ],
       evaluation: {
-        evaluated: "An evaluation pipeline tracked in MLflow. [Which metrics and test set.]",
-        monitored: "CI/CD with GitHub Actions; deployed with Docker and Kubernetes. [What is watched once it runs.]",
+        evaluated:
+          "20 frozen question and answer pairs, each with its gold source document, run through the real pipeline. Three scores: retrieval hit rate (did the gold document appear in the retrieved chunks, deterministic), faithfulness (is every claim supported by the retrieved context, LLM judge) and relevance (does the answer match the reference, LLM judge). Each must reach 0.8, and the same pytest is the merge gate in CI. MLflow compared three configurations on that set: 800-character chunks with top-4, 400-character chunks with top-4, and top-8 with a stricter prompt. All three scored 1.0 on all three metrics.",
+        monitored:
+          "Langfuse traces every /query: the embedding and chat calls with token usage, cost and latency, plus the retrieved documents and the minimum and maximum vector distance per request. GitHub Actions lints and tests on every push, and on main builds the image and pushes it to GHCR. The Kubernetes manifests run the same image with the keys held in a Secret.",
       },
-      hindsight: TODO_HINDSIGHT,
+      hindsight:
+        "The eval is saturated. Three different configurations all scored 1.0, so it cannot tell a better setup from a worse one, and the 0.8 gate would only catch a broken pipeline. I'd add harder questions, ones that span several documents and ones with no answer in the corpus, and revise the frozen file once, deliberately, so later runs stay comparable. The judge is also the same model that wrote the answers, which favors it; I'd judge with a different model. And I'd lock down the ingest endpoint from the first version: it was open until I started planning a public demo.",
     },
   },
   {
