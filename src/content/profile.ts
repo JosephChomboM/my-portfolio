@@ -6,7 +6,7 @@ export const profile = {
   roles: ["ML Engineer", "AI Engineer", "MLOps Engineer"],
   intro:
     "I deploy, evaluate and monitor machine learning in production, so models keep working long after launch.",
-  now: { role: "AI Engineer", org: "Santander Consumer Peru", via: "via Experis / ManpowerGroup", domain: "Consumer finance" },
+  now: { role: "AI Engineer", org: "Santander Peru", via: "via Experis / ManpowerGroup", domain: "Banking" },
   before: { role: "ML & AI Engineer Intern", org: "Banco de Crédito del Perú (BCP)", domain: "Banking" },
   education: {
     degree: "B.S. Information Systems Engineering",
@@ -19,7 +19,7 @@ export const profile = {
     {
       when: "Sep 2026 – now",
       role: "AI Engineer",
-      org: "Santander Consumer Peru",
+      org: "Santander Peru",
       detail:
         "Backend APIs that connect internal databases and web apps to AI services, an LLM assistant on WhatsApp that answers sales KPI questions in plain language with automatic charts, RAG flows for grounded, traceable answers, and internal agents in Copilot Studio.",
     },
