@@ -60,7 +60,7 @@ export const profile = {
   stack: [
     { group: "Languages & data", items: ["Python", "SQL", "PySpark", "PostgreSQL"] },
     { group: "Machine learning", items: ["scikit-learn", "TensorFlow", "Pandas", "Gradient boosting"] },
-    { group: "Generative AI", items: ["Azure OpenAI", "RAG", "Vector search", "AI agents"] },
+    { group: "Generative AI", items: ["Azure OpenAI", "RAG", "Vector search", "AI agents", "LangChain", "LangGraph", "LangSmith"] },
     { group: "MLOps & CI/CD", items: ["MLflow", "Databricks", "Model monitoring", "GitHub Actions"] },
     { group: "Backend & cloud", items: ["FastAPI", "Docker", "Kubernetes", "Azure & AWS"] },
   ],
