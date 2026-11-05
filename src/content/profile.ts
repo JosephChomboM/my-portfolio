@@ -6,7 +6,7 @@ export const profile = {
   roles: ["ML Engineer", "AI Engineer", "MLOps Engineer"],
   intro:
     "I deploy, evaluate and monitor machine learning in production, so models keep working long after launch.",
-  now: { role: "AI Engineer", org: "Santander Consumer Peru", via: "via Experis / ManpowerGroup", domain: "Consumer finance" },
+  now: { role: "AI Engineer", org: "Santander Peru", via: "via Experis / ManpowerGroup", domain: "Banking" },
   before: { role: "ML & AI Engineer Intern", org: "Banco de Crédito del Perú (BCP)", domain: "Banking" },
   education: {
     degree: "B.S. Information Systems Engineering",
@@ -19,7 +19,7 @@ export const profile = {
     {
       when: "Sep 2026 – now",
       role: "AI Engineer",
-      org: "Santander Consumer Peru",
+      org: "Santander Peru",
       detail:
         "Backend APIs that connect internal databases and web apps to AI services, an LLM assistant on WhatsApp that answers sales KPI questions in plain language with automatic charts, RAG flows for grounded, traceable answers, and internal agents in Copilot Studio.",
     },
@@ -37,6 +37,16 @@ export const profile = {
       detail: "An e-commerce platform in C#, .NET MVC, WebAssembly and SQL Server: products, users, inventory and purchase flows.",
     },
   ],
+  // newest first; shown in the Glance facts and at the top of the Path section
+  awards: [
+    {
+      when: "Oct 2026",
+      title: "2nd Place, AI Agents Hackathon",
+      issuer: "NTT DATA × Sundai Latam",
+      detail:
+        "Our team won 2nd place with Detalert, an anti-money laundering (AML) system that combines machine learning and AI agents. An ML model scores every transaction, explains why it was flagged and prioritizes cases. AI agents then investigate the uncertain ones like an analyst would and recommend a decision, while critical calls always go to a human. Their feedback flows back into the system so it keeps improving, and every decision is fully traceable.",
+    },
+  ],
   certifications: [
     "Microsoft Certified: SQL AI Developer Associate (DP-800)",
     "AWS Fundamentals Specialization",
@@ -50,7 +60,7 @@ export const profile = {
   stack: [
     { group: "Languages & data", items: ["Python", "SQL", "PySpark", "PostgreSQL"] },
     { group: "Machine learning", items: ["scikit-learn", "TensorFlow", "Pandas", "Gradient boosting"] },
-    { group: "Generative AI", items: ["Azure OpenAI", "RAG", "Vector search", "AI agents"] },
+    { group: "Generative AI", items: ["Azure OpenAI", "RAG", "Vector search", "AI agents", "LangChain", "LangGraph", "LangSmith"] },
     { group: "MLOps & CI/CD", items: ["MLflow", "Databricks", "Model monitoring", "GitHub Actions"] },
     { group: "Backend & cloud", items: ["FastAPI", "Docker", "Kubernetes", "Azure & AWS"] },
   ],
