@@ -13,6 +13,18 @@ export function Glance() {
     { k: "Now", v: <>{profile.now.role}, {profile.now.org} <span className="facts__aside">{profile.now.via}</span></> },
     { k: "Before", v: <>{profile.before.role}, {profile.before.org}</> },
     { k: "Education", v: <>{profile.education.degree}, USIL <span className="facts__aside">expected {profile.education.graduation} · {profile.education.note.toLowerCase()}</span></> },
+    {
+      k: "Awards",
+      v: (
+        <>
+          {profile.awards.map((a) => (
+            <span key={a.title}>
+              {a.title} <span className="facts__aside">{a.issuer} · {a.when}</span>
+            </span>
+          ))}
+        </>
+      ),
+    },
     { k: "Certified", v: <>{profile.certifications.join(" · ")}</> },
     { k: "Languages", v: <>{profile.languages}</> },
     { k: "Based", v: <>{profile.location} · {profile.workStyle}</> },
@@ -157,6 +169,7 @@ export function Practice() {
 
 export function Path() {
   const steps = [
+    ...profile.awards.map((a) => ({ when: a.when, what: a.title, where: a.issuer, detail: a.detail })),
     ...profile.experience.map((e) => ({ when: e.when, what: e.role, where: e.org, detail: e.detail })),
     {
       when: profile.education.graduation,

@@ -37,6 +37,16 @@ export const profile = {
       detail: "An e-commerce platform in C#, .NET MVC, WebAssembly and SQL Server: products, users, inventory and purchase flows.",
     },
   ],
+  // newest first; shown in the Glance facts and at the top of the Path section
+  awards: [
+    {
+      when: "Oct 2026",
+      title: "2nd Place, AI Agents Hackathon",
+      issuer: "NTT DATA × Sundai Latam",
+      detail:
+        "Our team won 2nd place with Detalert, an anti-money laundering (AML) system that combines machine learning and AI agents. An ML model scores every transaction, explains why it was flagged and prioritizes cases. AI agents then investigate the uncertain ones like an analyst would and recommend a decision, while critical calls always go to a human. Their feedback flows back into the system so it keeps improving, and every decision is fully traceable.",
+    },
+  ],
   certifications: [
     "Microsoft Certified: SQL AI Developer Associate (DP-800)",
     "AWS Fundamentals Specialization",

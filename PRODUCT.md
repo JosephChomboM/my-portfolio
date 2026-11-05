@@ -43,6 +43,7 @@ MLOps comes first: production deployment, pipelines, evaluation, observability, 
 - **Name:** Joseph Chombo (full name Joseph Chombo Morocho). A koi logo mark exists (`src/imports/logo.jpg`).
 - **Role framing (from his CVs):** AI Engineer at Santander Consumer Peru (via Experis / ManpowerGroup), Sep 2026 to present. Before that: Machine Learning Engineer Intern, Model Risk Management, at Banco de Crédito del Perú (BCP), Jan 2025 to Aug 2026, which Joseph also describes as model validation and automation (IFRS 9). Earlier: freelance Full Stack Developer, Aug 2023 to Jan 2024. Open to offers.
 - **Education:** B.S. Information Systems Engineering, Universidad San Ignacio de Loyola (USIL), expected Nov 2026, top 20% of class.
+- **Awards:** 2nd Place, AI Agents Hackathon (NTT DATA × Sundai Latam, Oct 2026) with Detalert, an AML system combining ML scoring and AI agents with human-in-the-loop review.
 - **Credentials:** Microsoft Certified: SQL AI Developer Associate (DP-800); AWS Fundamentals; IBM Machine Learning. English professional (ICPNA certified), Spanish native.
 - **Location:** Lima, Peru, working remotely; overlaps US working hours.
 - **Employers:** named (Santander Consumer Peru, BCP).
